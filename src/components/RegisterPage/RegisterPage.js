@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import teal from '@material-ui/core/colors/teal'
+
+const theme = createMuiTheme({
+  palette: {
+    primary: teal,
+    secondary: teal
+  }
+})
 
 class RegisterPage extends Component {
   state = {
@@ -31,7 +42,7 @@ class RegisterPage extends Component {
       this.state.timeAvailable &&
       this.state.languages &&
       this.state.qualifications
-      ) {
+    ) {
       this.props.dispatch({
         type: 'REGISTER',
         payload: {
@@ -61,157 +72,214 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.errors.registrationMessage && (
-          <h2
-            className="alert"
-            role="alert"
-          >
-            {this.props.errors.registrationMessage}
-          </h2>
-        )}
-        <form onSubmit={this.registerUser}>
-          <h1>Register User</h1>
-          <div>
-            <label htmlFor="firstName">
-              First Name:
+      <ThemeProvider theme={theme}>
+        <div>
+          {this.props.errors.registrationMessage && (
+            <h2
+              className="alert"
+              role="alert"
+            >
+              {this.props.errors.registrationMessage}
+            </h2>
+          )}
+          <form onSubmit={this.registerUser}>
+            <h1>Register User</h1>
+            <div>
+              <label htmlFor="firstName">
+                {/* First Name: */}
+                <TextField
+                  // type="text"
+                  // name="firstName"
+                  required
+                  id="standard-required"
+                  label="First Name"
+                  margin="dense"
+                  value={this.state.firstName}
+                  onChange={this.handleInputChangeFor('firstName')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="lastName">
+                {/* Last Name: */}
+                <TextField
+                  // type="text"
+                  // name="lastName"
+                  required
+                  id="standard-required"
+                  label="Last Name"
+                  margin="dense"
+                  value={this.state.lastName}
+                  onChange={this.handleInputChangeFor('lastName')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="username">
+                {/* Username: */}
+                <TextField
+                  // type="text"
+                  // name="username"
+                  required
+                  id="standard-name"
+                  label="Username"
+                  margin="dense"
+                  value={this.state.username}
+                  onChange={this.handleInputChangeFor('username')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="password">
+                {/* Password: */}
+                <TextField
+                  // type="password"
+                  // name="password"
+                  required
+                  id="standard-password-input"
+                  label="Password"
+                  type="password"
+                  autoComplete="current-password"
+                  margin="dense"
+                  placeholder="Password"
+                  helperText="Minimum of 6 characters"
+                  value={this.state.password}
+                  onChange={this.handleInputChangeFor('password')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="city">
+                {/* City: */}
+                <TextField
+                  // type="text"
+                  // name="city"
+                  required
+                  id="standard-name"
+                  label="City"
+                  margin="dense"
+                  value={this.state.city}
+                  onChange={this.handleInputChangeFor('city')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="state">
+                {/* State: */}
+                <TextField
+                  // type="text"
+                  // name="state"
+                  required
+                  id="standard-name"
+                  label="State"
+                  margin="dense"
+                  value={this.state.state}
+                  onChange={this.handleInputChangeFor('state')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="occupation">
+                {/* Occupation: */}
+                <TextField
+                  // type="text"
+                  // name="occupation"
+                  required
+                  id="standard-name"
+                  label="Job Title/Occupation"
+                  margin="dense"
+                  value={this.state.occupation}
+                  onChange={this.handleInputChangeFor('occupation')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="portfolioUrl">
+                <p>Github URL or another link to your portfolio:</p>
+                <TextField
+                  // type="text"
+                  // name="portfolioUrl"
+                  required
+                  placeholder="i.e. yourname.github.io"
+                  margin="dense"
+                  variant="outlined"
+                  value={this.state.portfolioUrl}
+                  onChange={this.handleInputChangeFor('portfolioUrl')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="timeAvailable">
+                <p>How much time can you commit to a project?</p>
+                <TextField
+                  // type="text"
+                  // name="timeAvailable"
+                  required
+                  multiline
+                  rows="4"
+                  placeholder="i.e. 5 hours per week"
+                  margin="dense"
+                  variant="outlined"
+                  value={this.state.timeAvailable}
+                  onChange={this.handleInputChangeFor('timeAvailable')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="languages">
+                <p>List your known programming languages</p>
+                <TextField
+                  // type="text"
+                  // name="languages"
+                  required
+                  multiline
+                  rows="4"
+                  placeholder="List programming languages here"
+                  margin="dense"
+                  variant="outlined"
+                  value={this.state.languages}
+                  onChange={this.handleInputChangeFor('languages')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="qualifications">
+                <p>What qualifications do you have? Include degrees, certifications, courses, etc.</p>
+                <TextField
+                  // type="text"
+                  // name="qualifications"
+                  multiline
+                  rows="4"
+                  placeholder="List qualifications here"
+                  margin="dense"
+                  variant="outlined"
+                  value={this.state.qualifications}
+                  onChange={this.handleInputChangeFor('qualifications')}
+                />
+              </label>
+            </div>
+            <div>
               <input
-                type="text"
-                name="firstName"
-                value={this.state.firstName}
-                onChange={this.handleInputChangeFor('firstName')}
+                className="register"
+                type="submit"
+                name="submit"
+                value="Register"
               />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="lastName">
-              Last Name:
-              <input
-                type="text"
-                name="lastName"
-                value={this.state.lastName}
-                onChange={this.handleInputChangeFor('lastName')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="username">
-              Username:
-              <input
-                type="text"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChangeFor('username')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="password">
-              Password:
-              <input
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleInputChangeFor('password')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="city">
-              City:
-              <input
-                type="text"
-                name="city"
-                value={this.state.city}
-                onChange={this.handleInputChangeFor('city')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="state">
-              State:
-              <input
-                type="text"
-                name="state"
-                value={this.state.state}
-                onChange={this.handleInputChangeFor('state')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="occupation">
-              Occupation:
-              <input
-                type="text"
-                name="occupation"
-                value={this.state.occupation}
-                onChange={this.handleInputChangeFor('occupation')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="portfolioUrl">
-              Portfolio URL:
-              <input
-                type="text"
-                name="portfolioUrl"
-                value={this.state.portfolioUrl}
-                onChange={this.handleInputChangeFor('portfolioUrl')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="timeAvailable">
-              Time Available:
-              <input
-                type="text"
-                name="timeAvailable"
-                value={this.state.timeAvailable}
-                onChange={this.handleInputChangeFor('timeAvailable')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="languages">
-              Languages:
-              <input
-                type="text"
-                name="languages"
-                value={this.state.languages}
-                onChange={this.handleInputChangeFor('languages')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="qualifications">
-              Qualifications:
-              <input
-                type="text"
-                name="qualifications"
-                value={this.state.qualifications}
-                onChange={this.handleInputChangeFor('qualifications')}
-              />
-            </label>
-          </div>
-          <div>
-            <input
-              className="register"
-              type="submit"
-              name="submit"
-              value="Register"
-            />
-          </div>
-        </form>
-        <center>
-          <button
-            type="button"
-            className="link-button"
-            onClick={() => { this.props.dispatch({ type: 'SET_TO_LOGIN_MODE' }) }}
-          >
-            Login
-          </button>
-        </center>
-      </div>
+            </div>
+          </form>
+          <center>
+            <Button
+              type="button"
+              className="link-button"
+              variant="contained"
+              color="primary"
+              onClick={() => { this.props.dispatch({ type: 'SET_TO_LOGIN_MODE' }) }}
+            >
+              Login
+            </Button>
+          </center>
+        </div>
+      </ThemeProvider>
     );
   }
 }
