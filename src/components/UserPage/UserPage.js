@@ -11,6 +11,10 @@ const UserPage = (props) => (
       Welcome, { props.user.username }!
     </h1>
     <p>Your ID is: {props.user.id}</p>
+    {/* firstName & lastName won't display - digging in to find out why */}
+    {/* <p>{props.user.firstName}</p>
+    <p>{props.user.lastName}</p> */}
+
     <LogOutButton className="log-in" />
   </div>
 );

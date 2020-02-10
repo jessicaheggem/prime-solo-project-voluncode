@@ -3,50 +3,49 @@ import { connect } from 'react-redux';
 
 class RegisterPage extends Component {
   state = {
-    // firstName: '',
-    // lastName: '',
+    firstName: '',
+    lastName: '',
     username: '',
     password: '',
-    // city: '',
-    // state: '',
-    // occupation: '',
-    // portfolioUrl: '',
-    // timeAvailable: '',
-    // languages: '',
-    // qualifications: '',
+    city: '',
+    state: '',
+    occupation: '',
+    portfolioUrl: '',
+    timeAvailable: '',
+    languages: '',
+    qualifications: '',
   };
 
   registerUser = (event) => {
     event.preventDefault();
 
     if (
-      // this.state.firstName &&
-      // this.state.lastName &&
+      this.state.firstName &&
+      this.state.lastName &&
       this.state.username &&
-      this.state.password 
-      // &&
-      // this.state.city &&
-      // this.state.state &&
-      // this.state.occupation &&
-      // this.state.portfolioUrl &&
-      // this.state.timeAvailable &&
-      // this.state.languages &&
-      // this.state.qualifications
+      this.state.password &&
+      this.state.city &&
+      this.state.state &&
+      this.state.occupation &&
+      this.state.portfolioUrl &&
+      this.state.timeAvailable &&
+      this.state.languages &&
+      this.state.qualifications
       ) {
       this.props.dispatch({
         type: 'REGISTER',
         payload: {
-          // firstName: this.state.firstName,
-          // lastName: this.state.lastName,
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
           username: this.state.username,
           password: this.state.password,
-          // city: this.state.city,
-          // state: this.state.state,
-          // occupation: this.state.occupation,
-          // portfolioUrl: this.state.portfolioUrl,
-          // timeAvailable: this.state.timeAvailable,
-          // languages: this.state.languages,
-          // qualifications: this.state.qualifications,
+          city: this.state.city,
+          state: this.state.state,
+          occupation: this.state.occupation,
+          portfolioUrl: this.state.portfolioUrl,
+          timeAvailable: this.state.timeAvailable,
+          languages: this.state.languages,
+          qualifications: this.state.qualifications,
         },
       });
     } else {
@@ -73,7 +72,7 @@ class RegisterPage extends Component {
         )}
         <form onSubmit={this.registerUser}>
           <h1>Register User</h1>
-          {/* <div>
+          <div>
             <label htmlFor="firstName">
               First Name:
               <input
@@ -94,7 +93,7 @@ class RegisterPage extends Component {
                 onChange={this.handleInputChangeFor('lastName')}
               />
             </label>
-          </div> */}
+          </div>
           <div>
             <label htmlFor="username">
               Username:
@@ -117,7 +116,7 @@ class RegisterPage extends Component {
               />
             </label>
           </div>
-          {/* <div>
+          <div>
             <label htmlFor="city">
               City:
               <input
@@ -193,7 +192,7 @@ class RegisterPage extends Component {
                 onChange={this.handleInputChangeFor('qualifications')}
               />
             </label>
-          </div> */}
+          </div>
           <div>
             <input
               className="register"
