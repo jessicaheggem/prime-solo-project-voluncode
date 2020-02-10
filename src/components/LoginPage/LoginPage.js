@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import teal from '@material-ui/core/colors/teal'
+
+const theme = createMuiTheme({
+  palette: {
+    primary: teal,
+    secondary: teal
+  }
+})
 
 class LoginPage extends Component {
   state = {
@@ -33,59 +42,72 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.errors.loginMessage && (
-          <h2
-            className="alert"
-            role="alert"
-          >
-            {this.props.errors.loginMessage}
-          </h2>
-        )}
-        <form className="loginForm" onSubmit={this.login}>
-          <h1>Login</h1>
-          <div>
-            <label htmlFor="username">
-              Username:
-              <TextField
-                type="text"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChangeFor('username')}
+      <ThemeProvider theme={theme}>
+        <div>
+          {this.props.errors.loginMessage && (
+            <h2
+              className="alert"
+              role="alert"
+            >
+              {this.props.errors.loginMessage}
+            </h2>
+          )}
+          <form className="loginForm" onSubmit={this.login}>
+            <h1>Login</h1>
+            <div>
+              <label htmlFor="username">
+                {/* Username: */}
+                <TextField
+                  // type="text"
+                  // name="username"
+                  required
+                  id="standard-name"
+                  label="Username"
+                  margin="dense"
+                  value={this.state.username}
+                  onChange={this.handleInputChangeFor('username')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="password">
+                {/* Password: */}
+                <TextField
+                  // type="password"
+                  // name="password"
+                  required
+                  id="standard-password-input"
+                  label="Password"
+                  type="password"
+                  autoComplete="current-password"
+                  margin="dense"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.handleInputChangeFor('password')}
+                />
+              </label>
+            </div>
+            <div>
+              <input
+                className="log-in"
+                type="submit"
+                name="submit"
+                value="Log In"
               />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="password">
-              Password:
-              <TextField
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleInputChangeFor('password')}
-              />
-            </label>
-          </div>
-          <div>
-            <input
-              className="log-in"
-              type="submit"
-              name="submit"
-              value="Log In"
-            />
-          </div>
-        </form>
-        <center>
-          <Button
-            type="button"
-            className="link-button"
-            
-            onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}
-          >
-            Register
+            </div>
+          </form>
+          <center>
+            <Button
+              type="button"
+              className="link-button"
+
+              onClick={() => { this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' }) }}
+            >
+              Register
           </Button>
-        </center>
-      </div>
+          </center>
+        </div>
+      </ThemeProvider>
     );
   }
 }
