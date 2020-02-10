@@ -28,8 +28,8 @@ router.post('/register', (req, res, next) => {
   const languages = req.body.languages;
   const qualifications = req.body.qualifications;
 
-
-  const queryText = 'INSERT INTO "user" (first_name, last_name, username, password, city, state, occupation, portfolio, time_available, languages, qualifications) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING id';
+  const queryText = `INSERT INTO "user" (first_name, last_name, username, password, city, state, occupation, portfolio, time_available, languages, qualifications) 
+  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING id;`;
   pool.query(queryText, 
     [firstName, lastName, username, password, city, state, occupation, portfolioUrl, timeAvailable, languages, qualifications])
     .then(() => res.sendStatus(201))

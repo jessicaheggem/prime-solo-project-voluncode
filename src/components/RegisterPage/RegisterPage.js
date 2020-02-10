@@ -212,9 +212,6 @@ class RegisterPage extends Component {
           </button>
         </center>
       </div>
-
-
-
     );
   }
 }

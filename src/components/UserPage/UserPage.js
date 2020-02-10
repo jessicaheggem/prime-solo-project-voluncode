@@ -8,12 +8,16 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 const UserPage = (props) => (
   <div>
     <h1 id="welcome">
-      Welcome, { props.user.username }!
+      Welcome, {props.user.username}!
     </h1>
     <p>Your ID is: {props.user.id}</p>
-    {/* firstName & lastName won't display - digging in to find out why */}
-    {/* <p>{props.user.firstName}</p>
-    <p>{props.user.lastName}</p> */}
+    <p>{props.user.first_name} {props.user.last_name}</p>
+    <p>{props.user.city}, {props.user.state}</p>
+    <p>{props.user.occupation}</p>
+    <p><b>Portfolio URL:</b> {props.user.portfolio}</p>
+    <p><b>Time available to volunteer:</b> {props.user.time_available}</p>
+    <p><b>Known programming languages:</b> {props.user.languages}</p>
+    <p><b>Qualifications:</b> {props.user.qualifications}</p>
 
     <LogOutButton className="log-in" />
   </div>
