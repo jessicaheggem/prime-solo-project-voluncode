@@ -6,7 +6,8 @@
 
 CREATE TABLE "user" (
 	"id" SERIAL PRIMARY KEY,
-	"timestamp" TIMESTAMP NOT NULL,
+	-- figure out how to timestamp entries to display on DOM when signed in - "Member of Voluncode since:"
+	-- "timestamp" TIMESTAMP NOT NULL,
 	"first_name" VARCHAR(255) NOT NULL,
 	"last_name" VARCHAR(255) NOT NULL,
 	"username" VARCHAR(80) UNIQUE NOT NULL,
