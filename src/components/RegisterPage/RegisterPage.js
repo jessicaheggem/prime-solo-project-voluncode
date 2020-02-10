@@ -3,8 +3,18 @@ import {connect} from 'react-redux';
 
 class RegisterPage extends Component {
   state = {
+    timestamp: '',
+    firstName: '',
+    lastName: '',
     username: '',
     password: '',
+    city: '',
+    state: '',
+    occupation: '',
+    portfolioUrl: '',
+    timeAvailable: '',
+    languages: '',
+    qualifications: '',
   };
 
   registerUser = (event) => {
@@ -83,6 +93,9 @@ class RegisterPage extends Component {
           </button>
         </center>
       </div>
+
+
+
     );
   }
 }
