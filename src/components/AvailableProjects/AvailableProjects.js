@@ -14,7 +14,7 @@ class AvailableProjects extends Component {
   render() {
     return (
       <ul>
-        {this.props.reduxStore.projectsReducer.map(project =>
+        {this.props.reduxStore.projects.map(project =>
           <li key={project.id}>
             <div>
               <p>{project.start_date}</p>
