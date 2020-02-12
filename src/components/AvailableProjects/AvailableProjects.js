@@ -8,6 +8,7 @@ import React from 'react';
 const AvailableProjects = () => (
   <div>
     <h1>Available Projects</h1>
+    
   </div>
 );
 
