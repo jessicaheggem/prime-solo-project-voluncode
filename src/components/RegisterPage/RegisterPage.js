@@ -115,6 +115,18 @@ class RegisterPage extends Component {
               </label>
             </div>
             <div>
+              <label htmlFor="email">
+                <TextField
+                  required
+                  id="standard-required"
+                  label="Email"
+                  margin="dense"
+                  value={this.state.email}
+                  onChange={this.handleInputChangeFor('email')}
+                />
+              </label>
+            </div>
+            <div>
               <label htmlFor="username">
                 {/* Username: */}
                 <TextField
@@ -200,7 +212,7 @@ class RegisterPage extends Component {
                   // type="text"
                   // name="portfolioUrl"
                   required
-                  placeholder="i.e. yourname.github.io"
+                  placeholder="i.e. github.com/name"
                   margin="dense"
                   variant="outlined"
                   value={this.state.portfolioUrl}
