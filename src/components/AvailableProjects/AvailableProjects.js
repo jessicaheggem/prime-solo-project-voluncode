@@ -14,6 +14,7 @@ class AvailableProjects extends Component {
   render() {
     return (
       <ul>
+        {/* projects.map : the word projects connects back to the renamed reducer in reducer/index.js in the combineReducers */}
         {this.props.reduxStore.projects.map(project =>
           <li key={project.id}>
             <div>
