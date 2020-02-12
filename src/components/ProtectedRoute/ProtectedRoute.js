@@ -13,6 +13,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 // so your server-side route must implement real security
 // by checking req.isAuthenticated for authentication
 // and by checking req.user for authorization
+// *****REFERENCE GROUP PROJECT AUTH SHELF(?) FOR THIS*********
 
 const ProtectedRoute = (props) => {
   // Using destructuring, this takes ComponentToProtect from component

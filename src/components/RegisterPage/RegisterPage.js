@@ -48,6 +48,7 @@ class RegisterPage extends Component {
         payload: {
           firstName: this.state.firstName,
           lastName: this.state.lastName,
+          email: this.state.email,
           username: this.state.username,
           password: this.state.password,
           city: this.state.city,
@@ -73,7 +74,7 @@ class RegisterPage extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div>
+        <div className="registrationPage">
           {this.props.errors.registrationMessage && (
             <h2
               className="alert"
@@ -86,10 +87,7 @@ class RegisterPage extends Component {
             <h1>Register User</h1>
             <div>
               <label htmlFor="firstName">
-                {/* First Name: */}
                 <TextField
-                  // type="text"
-                  // name="firstName"
                   required
                   id="standard-required"
                   label="First Name"
@@ -101,10 +99,7 @@ class RegisterPage extends Component {
             </div>
             <div>
               <label htmlFor="lastName">
-                {/* Last Name: */}
                 <TextField
-                  // type="text"
-                  // name="lastName"
                   required
                   id="standard-required"
                   label="Last Name"
@@ -128,10 +123,7 @@ class RegisterPage extends Component {
             </div>
             <div>
               <label htmlFor="username">
-                {/* Username: */}
                 <TextField
-                  // type="text"
-                  // name="username"
                   required
                   id="standard-name"
                   label="Username"
@@ -143,17 +135,13 @@ class RegisterPage extends Component {
             </div>
             <div>
               <label htmlFor="password">
-                {/* Password: */}
                 <TextField
-                  // type="password"
-                  // name="password"
                   required
                   id="standard-password-input"
                   label="Password"
                   type="password"
                   autoComplete="current-password"
                   margin="dense"
-                  placeholder="Password"
                   helperText="Minimum of 6 characters"
                   value={this.state.password}
                   onChange={this.handleInputChangeFor('password')}
@@ -162,10 +150,7 @@ class RegisterPage extends Component {
             </div>
             <div>
               <label htmlFor="city">
-                {/* City: */}
                 <TextField
-                  // type="text"
-                  // name="city"
                   required
                   id="standard-name"
                   label="City"
@@ -177,10 +162,7 @@ class RegisterPage extends Component {
             </div>
             <div>
               <label htmlFor="state">
-                {/* State: */}
                 <TextField
-                  // type="text"
-                  // name="state"
                   required
                   id="standard-name"
                   label="State"
@@ -192,10 +174,7 @@ class RegisterPage extends Component {
             </div>
             <div>
               <label htmlFor="occupation">
-                {/* Occupation: */}
                 <TextField
-                  // type="text"
-                  // name="occupation"
                   required
                   id="standard-name"
                   label="Job Title/Occupation"
@@ -209,8 +188,6 @@ class RegisterPage extends Component {
               <label htmlFor="portfolioUrl">
                 <p>Github URL or another link to your portfolio:</p>
                 <TextField
-                  // type="text"
-                  // name="portfolioUrl"
                   required
                   placeholder="i.e. github.com/name"
                   margin="dense"
@@ -224,8 +201,6 @@ class RegisterPage extends Component {
               <label htmlFor="timeAvailable">
                 <p>How much time can you commit to a project?</p>
                 <TextField
-                  // type="text"
-                  // name="timeAvailable"
                   required
                   multiline
                   rows="4"
@@ -241,8 +216,6 @@ class RegisterPage extends Component {
               <label htmlFor="languages">
                 <p>List your known programming languages</p>
                 <TextField
-                  // type="text"
-                  // name="languages"
                   required
                   multiline
                   rows="4"
@@ -258,8 +231,6 @@ class RegisterPage extends Component {
               <label htmlFor="qualifications">
                 <p>What qualifications do you have? Include degrees, certifications, courses, etc.</p>
                 <TextField
-                  // type="text"
-                  // name="qualifications"
                   multiline
                   rows="4"
                   placeholder="List qualifications here"
