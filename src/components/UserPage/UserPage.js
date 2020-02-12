@@ -11,6 +11,7 @@ const UserPage = (props) => (
       Welcome, {props.user.username}!
     </h1>
     <p>Your ID is: {props.user.id}</p>
+    <p>Member since: {props.user.timestamp}</p>
     <p>{props.user.first_name} {props.user.last_name}</p>
     <p>{props.user.city}, {props.user.state}</p>
     <p>{props.user.occupation}</p>
