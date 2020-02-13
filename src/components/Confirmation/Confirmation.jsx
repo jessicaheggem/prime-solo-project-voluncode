@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 class Confirmation extends Component {
     handleHomeClick = () => {
-        console.log('clicked YES');
+        // console.log('clicked YES');
         this.props.history.push('/home')
     }
 

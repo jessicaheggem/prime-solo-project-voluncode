@@ -4,12 +4,12 @@ import { connect } from 'react-redux'
 
 class Contribute extends Component {
     handleYesClick = () => {
-        console.log('clicked YES');
+        // console.log('clicked YES');
         this.props.history.push('/confirmation')
     }
 
     handleNoClick = () => {
-        console.log('clicked NO');
+        // console.log('clicked NO');
         this.props.history.push('/projects')
 
     }

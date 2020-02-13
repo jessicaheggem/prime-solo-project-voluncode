@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 class ProjectInfo extends Component {
   handleContributeClick = () => {
-    console.log('clicked Contribute');
+    // console.log('clicked Contribute');
     this.props.history.push('/contribute')
   }
 
