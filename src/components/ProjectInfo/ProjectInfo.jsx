@@ -4,6 +4,13 @@ import Popup from "reactjs-popup";
 
 
 class ProjectInfo extends Component {
+  // componentDidMount() {
+  //   this.props.dispatch({
+  //     type: 'FETCH_PROJECT_INFO',
+  //     payload: id
+  //   })
+  // }
+
   handleContributeClick = () => {
     // console.log('clicked Contribute');
     this.props.history.push('/contribute')

@@ -14,7 +14,7 @@ class AvailableProjects extends Component {
   }
 
   handleNameClick = (id) => {
-    // console.log(id);
+    console.log(id);
     this.props.dispatch({
       type: 'FETCH_PROJECT_INFO',
       payload: id
