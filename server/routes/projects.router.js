@@ -19,11 +19,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    const queryText = `SELECT * FROM "project" WHERE "project".id = $1;`;
+    const queryText = `SELECT * FROM "project" WHERE "id" = $1;`;
     pool.query(queryText, [req.params.id])
         .then((result) => { res.send(result.rows); })
         .catch((err) => {
-            console.log('Error completing SELECT project query', err);
+            console.log(`Error on query ${error}`);
             res.sendStatus(500);
         });
 });

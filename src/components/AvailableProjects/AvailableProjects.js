@@ -13,6 +13,15 @@ class AvailableProjects extends Component {
     this.props.dispatch({ type: 'FETCH_PROJECTS' })
   }
 
+  handleNameClick = (id) => {
+    // console.log(id);
+    this.props.dispatch({
+      type: 'FETCH_PROJECT_INFO',
+      payload: id
+    })
+    this.props.history.push(`/project_info/${id}`);
+  }
+
   render() {
     return (
       <div>
@@ -22,9 +31,9 @@ class AvailableProjects extends Component {
           {this.props.reduxStore.projects.map(project =>
             <li key={project.id}>
               <div>
-                <Link to="/project_info">
+                <h3 onClick={() => this.handleNameClick(project.id)} >
                   {project.organization_name}
-                </Link>
+                </h3>
                 <p>{project.description}</p>
                 <p>{project.start_date}</p>
                 <p>{project.end_date}</p>

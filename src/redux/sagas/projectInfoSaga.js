@@ -9,7 +9,7 @@ function* fetchProjectInfo(action){
     try{
         let response = yield axios.get(`/api/project_info/${action.payload}`);
         console.log(response.data);
-        yield put({ type: 'SET_PROJECT_INFO', payload: response.data[0]});
+        yield put({ type: 'SET_PROJECT_INFO', payload: response.data[0] });
     }
     catch (error) {
         console.log('Error getting project info', error)
