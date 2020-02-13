@@ -3,7 +3,10 @@ import { connect } from 'react-redux'
 
 
 class ProjectInfo extends Component {
- 
+  handleContributeClick = () => {
+    console.log('clicked Contribute');
+    this.props.history.push('/contribute')
+  }
 
   render() {
     return (
@@ -13,7 +16,7 @@ class ProjectInfo extends Component {
         <p> {this.props.reduxStore.projectInfo.start_date}</p>
         <p> {this.props.reduxStore.projectInfo.end_date} </p>
         <p>{this.props.reduxStore.projectInfo.description}</p>
-
+        <button onClick={() => this.handleContributeClick()}>Contribute</button>
       </div>
     )
   }

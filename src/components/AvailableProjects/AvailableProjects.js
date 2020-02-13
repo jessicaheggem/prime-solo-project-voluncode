@@ -22,6 +22,12 @@ class AvailableProjects extends Component {
     this.props.history.push(`/project_info/${id}`);
   }
 
+  handleContributeClick = () => {
+    console.log('clicked Contribute');
+    this.props.history.push('/contribute');
+    
+  }
+
   render() {
     return (
       <div>
@@ -37,6 +43,7 @@ class AvailableProjects extends Component {
                 <p>{project.description}</p>
                 <p>{project.start_date}</p>
                 <p>{project.end_date}</p>
+                <button onClick={() => this.handleContributeClick()} >Contribute</button>
               </div>
             </li>
           )}
