@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 
 
 class ProjectInfo extends Component {
-  // componentDidMount() {
-  //   this.props.dispatch({ type: 'FETCH_PROJECT_INFO' })
-  // }
+ 
 
   render() {
     return (

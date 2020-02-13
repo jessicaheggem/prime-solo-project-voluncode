@@ -58,7 +58,7 @@ class App extends Component {
             />
             <ProtectedRoute
               exact
-              path="/project_info"
+              path="/project_info/:id"
               component={ProjectInfo}
             />
             {/* If none of the other routes matched, we will show a 404. */}
