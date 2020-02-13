@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Popup from "reactjs-popup";
 
 
 // This is one of our simplest components
