@@ -16,6 +16,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import AvailableProjects from '../AvailableProjects/AvailableProjects';
+import ProjectInfo from '../ProjectInfo/ProjectInfo';
 
 import './App.css';
 
@@ -54,6 +55,11 @@ class App extends Component {
               exact
               path="/projects"
               component={AvailableProjects}
+            />
+            <ProtectedRoute
+              exact
+              path="/project_info"
+              component={ProjectInfo}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

@@ -3,6 +3,7 @@ import errors from './errorsReducer';
 import loginMode from './loginModeReducer';
 import user from './userReducer';
 import projects from './projectsReducer';
+import projectInfo from './projectInfoReducer'
 // renaming the projectsReducer here to "projects" means it also needs to be 
 // called projects when it gets mapped (.map) over in AvailableProjects
 // i.e. this.props.reduxStore.projects.map , otherwise, IT WON'T WORK
@@ -17,8 +18,9 @@ import projects from './projectsReducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
-  user, 
-  projects,// will have an id and username if someone is logged in
+  user, // will have an id and username if someone is logged in
+  projects,
+  projectInfo
 });
 
 export default rootReducer;
