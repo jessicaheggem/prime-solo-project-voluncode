@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
+import SelectedProject from '../SelectedProject/SelectedProject'
+
 
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
@@ -20,7 +22,7 @@ const UserPage = (props) => (
     <p><b>Time available to volunteer:</b> {props.user.time_available}</p>
     <p><b>Known programming languages:</b> {props.user.languages}</p>
     <p><b>Qualifications:</b> {props.user.qualifications}</p>
-
+    <SelectedProject />
     <LogOutButton className="log-in" />
   </div>
 );

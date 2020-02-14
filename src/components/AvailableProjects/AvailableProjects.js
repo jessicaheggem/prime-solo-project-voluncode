@@ -46,8 +46,7 @@ class AvailableProjects extends Component {
                 <Popup trigger={<button > Contribute </button>} modal>
                   {close => (
                     <div>
-                      <a onClick={close}>
-                      </a>
+                      <a onClick={close}>&times;</a>
                       <h2>Are you sure you want to contribute?</h2>
                       <div>
                         <button
