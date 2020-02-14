@@ -28,19 +28,17 @@ router.get('/:id', (req, res) => {
         });
 });
 
-
 router.post('/', (req, res) => {
     console.log('in post router')
-    const project = req.user;
-    console.log(project)
     const queryText = `
         INSERT INTO "user_project" (user_id, project_id)
         VALUES ($1, $2);`;
     const queryValues = [
-        project.user_id,
-        project.project_id
+        req.user.id,
+        req.body.project_id
     ];
     pool.query(queryText, queryValues)
+    // pool.query holding queryText and queryValues, sends the data to SQL
     .then(()=> {
         res.sendStatus(201);
         console.log(queryValues)

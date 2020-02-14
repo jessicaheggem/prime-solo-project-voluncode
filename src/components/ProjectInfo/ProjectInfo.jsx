@@ -6,16 +6,15 @@ import Popup from "reactjs-popup";
 class ProjectInfo extends Component {
 
   state = {
-    addProject: {
-        user_id: '',
-        project_id: '',
-    }
-}
+    project_id: '',
+  }
 
   handleYesClick = (event) => {
     this.props.dispatch({
       type: 'POST_PROJECT',
-      payload: this.state.addProject
+      payload: {
+        project_id: this.props.reduxStore.projectInfo.id
+      }
     })
     this.props.history.push(`/home`);
     // this.props.history.push('/confirmation')

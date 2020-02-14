@@ -8,14 +8,16 @@ function* projectInfoSaga(){
 
 function* postProject(action){
     console.log('in postProject saga', action.payload)
-    let response = yield axios.post(`/api/shelf`, action.payload)
-    yield put({ type: 'FETCH_PROJECT_INFO' })
+    yield axios.post(`/api/project_info`, action.payload)
+    // yield put({ type: 'FETCH_PROJECT' })
+    // put === dispatch
 }
 
 function* fetchProjectInfo(action){
     try{
         let response = yield axios.get(`/api/project_info/${action.payload}`);
         console.log(response.data);
+    // the word  ->     put === dispatch
         yield put({ type: 'SET_PROJECT_INFO', payload: response.data[0] });
     }
     catch (error) {
