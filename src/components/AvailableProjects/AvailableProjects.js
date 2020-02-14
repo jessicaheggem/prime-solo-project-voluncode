@@ -22,10 +22,9 @@ class AvailableProjects extends Component {
     this.props.history.push(`/project_info/${id}`);
   }
 
-  handleContributeClick = () => {
-    console.log('clicked Contribute');
-    this.props.history.push('/contribute');
-    
+  handleYesClick = () => {
+    // console.log('clicked YES');
+    this.props.history.push('/confirmation')
   }
 
   render() {
@@ -43,7 +42,28 @@ class AvailableProjects extends Component {
                 <p>{project.description}</p>
                 <p>{project.start_date}</p>
                 <p>{project.end_date}</p>
-                <button onClick={() => this.handleContributeClick()} >Contribute</button>
+
+                <Popup trigger={<button > Contribute </button>} modal>
+                  {close => (
+                    <div>
+                      <a onClick={close}>
+                      </a>
+                      <h2>Are you sure you want to contribute?</h2>
+                      <div>
+                        <button
+                          onClick={() => { close(); }} >
+                          No
+                        </button>
+                        <button onClick={() => this.handleYesClick()}> Yes </button>
+                      </div>
+                    </div>
+                  )}
+                </Popup>
+
+
+
+
+
               </div>
             </li>
           )}
