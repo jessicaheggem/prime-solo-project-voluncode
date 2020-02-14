@@ -17,7 +17,6 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import AvailableProjects from '../AvailableProjects/AvailableProjects';
 import ProjectInfo from '../ProjectInfo/ProjectInfo';
-import Contribute from '../Contribute/Contribute';
 import Confirmation from '../Confirmation/Confirmation';
 
 import './App.css';
@@ -62,11 +61,6 @@ class App extends Component {
               exact
               path="/project_info/:id"
               component={ProjectInfo}
-            />
-            <ProtectedRoute
-              exact
-              path="/contribute"
-              component={Contribute}
             />
             <ProtectedRoute
               exact

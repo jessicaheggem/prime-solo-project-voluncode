@@ -59,11 +59,6 @@ class AvailableProjects extends Component {
                     </div>
                   )}
                 </Popup>
-
-
-
-
-
               </div>
             </li>
           )}

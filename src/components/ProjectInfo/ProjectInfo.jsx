@@ -4,16 +4,10 @@ import Popup from "reactjs-popup";
 
 
 class ProjectInfo extends Component {
-  // componentDidMount() {
-  //   this.props.dispatch({
-  //     type: 'FETCH_PROJECT_INFO',
-  //     payload: id
-  //   })
-  // }
 
-  handleContributeClick = () => {
-    // console.log('clicked Contribute');
-    this.props.history.push('/contribute')
+  handleYesClick = () => {
+    // console.log('clicked YES');
+    this.props.history.push('/confirmation')
   }
 
   render() {
@@ -24,7 +18,23 @@ class ProjectInfo extends Component {
         <p> {this.props.reduxStore.projectInfo.start_date}</p>
         <p> {this.props.reduxStore.projectInfo.end_date} </p>
         <p>{this.props.reduxStore.projectInfo.description}</p>
-        <button onClick={() => this.handleContributeClick()}>Contribute</button>
+        {/* <button onClick={() => this.handleContributeClick()}>Contribute</button> */}
+        <Popup trigger={<button > Contribute </button>} modal>
+          {close => (
+            <div>
+              <a onClick={close}>
+              </a>
+              <h2>Are you sure you want to contribute?</h2>
+              <div>
+                <button
+                  onClick={() => { close(); }} >
+                  No
+                        </button>
+                <button onClick={() => this.handleYesClick()}> Yes </button>
+              </div>
+            </div>
+          )}
+        </Popup>
       </div>
     )
   }
