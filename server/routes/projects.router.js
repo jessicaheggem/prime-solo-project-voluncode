@@ -28,11 +28,26 @@ router.get('/:id', (req, res) => {
         });
 });
 
-/**
- * POST route template
- */
-// router.post('/', (req, res) => {
 
-// });
+router.post('/', (req, res) => {
+    console.log('in post router')
+    const project = req.user;
+    console.log(project)
+    const queryText = `
+        INSERT INTO "user_project" (user_id, project_id)
+        VALUES ($1, $2);`;
+    const queryValues = [
+        project.user_id,
+        project.project_id
+    ];
+    pool.query(queryText, queryValues)
+    .then(()=> {
+        res.sendStatus(201);
+        console.log(queryValues)
+    }).catch((err) => {
+        console.log('Error in POST on projects.router', err);
+        res.sendStatus(500);
+    })
+});
 
 module.exports = router;

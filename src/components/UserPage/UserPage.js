@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import SelectedProject from '../SelectedProject/SelectedProject'
-
+const moment = require('moment');
 
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
+
 const UserPage = (props) => (
   <div>
     <h1 id="welcome">
@@ -22,7 +23,9 @@ const UserPage = (props) => (
     <p><b>Time available to volunteer:</b> {props.user.time_available}</p>
     <p><b>Known programming languages:</b> {props.user.languages}</p>
     <p><b>Qualifications:</b> {props.user.qualifications}</p>
+    <br />
     <SelectedProject />
+    <br />
     <LogOutButton className="log-in" />
   </div>
 );

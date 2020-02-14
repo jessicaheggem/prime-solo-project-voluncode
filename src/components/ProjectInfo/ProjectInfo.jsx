@@ -5,11 +5,17 @@ import Popup from "reactjs-popup";
 
 class ProjectInfo extends Component {
 
-  handleYesClick = (id) => {
-    // console.log('clicked YES');
+  state = {
+    addProject: {
+        user_id: '',
+        project_id: '',
+    }
+}
+
+  handleYesClick = (event) => {
     this.props.dispatch({
-      type: 'FETCH_PROJECT_INFO',
-      payload: id
+      type: 'POST_PROJECT',
+      payload: this.state.addProject
     })
     this.props.history.push(`/home`);
     // this.props.history.push('/confirmation')

@@ -3,6 +3,13 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 function* projectInfoSaga(){
     yield takeEvery('FETCH_PROJECT_INFO', fetchProjectInfo)
+    yield takeEvery('POST_PROJECT', postProject)
+}
+
+function* postProject(action){
+    console.log('in postProject saga', action.payload)
+    let response = yield axios.post(`/api/shelf`, action.payload)
+    yield put({ type: 'FETCH_PROJECT_INFO' })
 }
 
 function* fetchProjectInfo(action){
