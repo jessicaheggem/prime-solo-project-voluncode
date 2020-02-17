@@ -9,7 +9,7 @@ function* fetchDeveloperProject(){
     try{
         let response = yield axios.get('/api/developer_project');
         console.log(response.data);
-        yield put({ type: 'SET_DEVELOPER_PROJECT', payload: response.data});
+        yield put({ type: 'SET_DEVELOPER_PROJECT', payload: response.data[0]});
     }
     catch (error) {
         console.log('Error getting developer project', error)
