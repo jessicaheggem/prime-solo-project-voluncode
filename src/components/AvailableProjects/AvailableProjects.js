@@ -9,9 +9,9 @@ import Popup from "reactjs-popup";
 
 class AvailableProjects extends Component {
 
-  state = {
-    project_id: '',
-  }
+  // state = {
+  //   project_id: '',
+  // }
 
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_PROJECTS' })
@@ -28,14 +28,14 @@ class AvailableProjects extends Component {
 
   handleYesClick = () => {
     // console.log('clicked YES');
-    this.props.dispatch({
-      type: 'POST_PROJECT',
-      payload: {
-        project_id: this.props.reduxStore.projectInfo.id
-      }
-    })
-    this.props.history.push(`/home`);
-    // this.props.history.push('/confirmation')
+    // this.props.dispatch({
+    //   type: 'POST_PROJECT',
+    //   payload: {
+    //     project_id: this.props.reduxStore.projectInfo.id
+    //   }
+    // })
+    // this.props.history.push(`/home`);
+    this.props.history.push('/confirmation')
   }
 
   render() {
@@ -54,7 +54,7 @@ class AvailableProjects extends Component {
                 <p>{project.start_date}</p>
                 <p>{project.end_date}</p>
 
-                <Popup trigger={<button > Contribute </button>} modal>
+                <Popup trigger={<button> Contribute </button>} modal>
                   {close => (
                     <div>
                       <a onClick={close}>&times;</a>
