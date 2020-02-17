@@ -1,4 +1,4 @@
-const developerProjectReducer = (state = {}, action) => {
+const developerProjectReducer = (state = [], action) => {
     switch (action.type) {
       case 'SET_DEVELOPER_PROJECT':
         return action.payload;
