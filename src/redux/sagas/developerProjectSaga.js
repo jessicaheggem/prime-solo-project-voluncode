@@ -13,7 +13,6 @@ function* fetchDeveloperProject(action) {
             yield put({ type: 'SET_DEVELOPER_PROJECT', payload: response.data[0] });
         } else{
             yield put({ type: 'SET_DEVELOPER_PROJECT', payload: {} });
-
         }
     }
     catch (error) {

@@ -34,7 +34,6 @@ app.use('/api/projects', projectsRouter);
 app.use('/api/project_info', projectInfoRouter);
 app.use('/api/developer_project', developerProjectRouter)
 
-
 // Serve static files
 app.use(express.static('build'));
 
