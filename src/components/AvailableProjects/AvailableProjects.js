@@ -54,7 +54,7 @@ class AvailableProjects extends Component {
                 <p>{project.start_date}</p>
                 <p>{project.end_date}</p>
 
-                <Popup trigger={<button> Contribute </button>} modal>
+                {/* <Popup trigger={<button> Contribute </button>} modal>
                   {close => (
                     <div>
                       <a onClick={close}>&times;</a>
@@ -68,7 +68,7 @@ class AvailableProjects extends Component {
                       </div>
                     </div>
                   )}
-                </Popup>
+                </Popup> */}
               </div>
             </li>
           )}

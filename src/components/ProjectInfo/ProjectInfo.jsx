@@ -16,8 +16,8 @@ class ProjectInfo extends Component {
         project_id: this.props.reduxStore.projectInfo.id
       }
     })
-    this.props.history.push(`/home`);
-    // this.props.history.push('/confirmation')
+    // this.props.history.push(`/home`);
+    this.props.history.push('/confirmation')
   }
 
   render() {
