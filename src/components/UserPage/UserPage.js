@@ -8,11 +8,13 @@ const moment = require('moment');
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
 
+
 const UserPage = (props) => (
+
   <div>
     <h1 id="welcome">
       Welcome, {props.user.username}!
-    </h1>
+  </h1>
     <p>Your ID is: {props.user.id}</p>
     <p>Member since: {props.user.timestamp}</p>
     <p>Email: {props.user.email}</p>
@@ -23,11 +25,19 @@ const UserPage = (props) => (
     <p><b>Time available to volunteer:</b> {props.user.time_available}</p>
     <p><b>Known programming languages:</b> {props.user.languages}</p>
     <p><b>Qualifications:</b> {props.user.qualifications}</p>
+
+    <button onClick={() => {
+      console.log('clicked Edit Profile');
+      this.props.history.push('/edit_profile')
+
+    }}>Edit Profile
+    </button>
+    
     <br />
     <SelectedProject />
     <br />
     <LogOutButton className="log-in" />
-  </div>
+  </div >
 );
 
 // Instead of taking everything from state, we just want the user info.
