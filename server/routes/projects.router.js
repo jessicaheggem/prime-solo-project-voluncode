@@ -2,9 +2,6 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
 router.get('/', (req, res) => {
     const queryText = 'SELECT * FROM "project";'
     console.log('in projects.router GET')
@@ -38,14 +35,14 @@ router.post('/', (req, res) => {
         req.body.project_id
     ];
     pool.query(queryText, queryValues)
-    // pool.query holding queryText and queryValues, sends the data to SQL
-    .then(()=> {
-        res.sendStatus(201);
-        console.log(queryValues)
-    }).catch((err) => {
-        console.log('Error in POST on projects.router', err);
-        res.sendStatus(500);
-    })
+        // pool.query holding queryText and queryValues, sends the data to SQL
+        .then(() => {
+            res.sendStatus(201);
+            console.log(queryValues)
+        }).catch((err) => {
+            console.log('Error in POST on projects.router', err);
+            res.sendStatus(500);
+        })
 });
 
 module.exports = router;

@@ -4,6 +4,7 @@ import loginMode from './loginModeReducer';
 import user from './userReducer';
 import projects from './projectsReducer';
 import projectInfo from './projectInfoReducer'
+import developerProject from './developerProjectReducer'
 // renaming the projectsReducer here to "projects" means it also needs to be 
 // called projects when it gets mapped (.map) over in AvailableProjects
 // i.e. this.props.reduxStore.projects.map , otherwise, IT WON'T WORK
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
   user, // will have an id and username if someone is logged in
   projects,
-  projectInfo
+  projectInfo,
+  developerProject,
 });
 
 export default rootReducer;

@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Popup from "reactjs-popup";
 
-
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 class AvailableProjects extends Component {
+
+  state = {
+    project_id: '',
+  }
+
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_PROJECTS' })
   }
@@ -24,7 +28,14 @@ class AvailableProjects extends Component {
 
   handleYesClick = () => {
     // console.log('clicked YES');
-    this.props.history.push('/confirmation')
+    this.props.dispatch({
+      type: 'POST_PROJECT',
+      payload: {
+        project_id: this.props.reduxStore.projectInfo.id
+      }
+    })
+    this.props.history.push(`/home`);
+    // this.props.history.push('/confirmation')
   }
 
   render() {
