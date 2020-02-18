@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Popup from "reactjs-popup";
+const moment = require('moment');
 
 class SelectedProject extends Component {
 
@@ -22,8 +23,8 @@ class SelectedProject extends Component {
                 <h2>Your Project:</h2>
                 {/* {JSON.stringify(this.props.reduxStore.developerProject)} */}
                 <h3> {this.props.reduxStore.developerProject.organization_name} </h3>
-                <p><b> Start date:</b> {this.props.reduxStore.developerProject.start_date} </p>
-                <p><b> End date:</b> {this.props.reduxStore.developerProject.end_date} </p>
+                <p><b> Start date:</b> {moment(this.props.reduxStore.developerProject.start_date).format('LL')} </p>
+                <p><b> End date:</b> {moment(this.props.reduxStore.developerProject.end_date).format('LL')} </p>
                 <p> {this.props.reduxStore.developerProject.description} </p>
                 {/* <button onClick={(event) => { if (window.confirm('Are you sure you want to delete this?')) this.handleDelete(event) }}>Delete Project</button> */}
                 <Popup trigger={<button> Delete Project </button>} modal>

@@ -60,7 +60,8 @@ class RegisterPage extends Component {
           qualifications: this.state.qualifications,
         },
       });
-    } else {
+    }
+    else {
       this.props.dispatch({ type: 'REGISTRATION_INPUT_ERROR' });
     }
   } // end registerUser

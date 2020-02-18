@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Popup from "reactjs-popup";
+const moment = require('moment');
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -47,8 +48,8 @@ class AvailableProjects extends Component {
                   {project.organization_name}
                 </h3>
                 <p>{project.description}</p>
-                <p>{project.start_date}</p>
-                <p>{project.end_date}</p>
+                <p>{moment(project.start_date).format('LL')}</p>
+                <p>{moment(project.end_date).format('LL')}</p>
 
                 {/* <Popup trigger={<button> Contribute </button>} modal>
                   {close => (

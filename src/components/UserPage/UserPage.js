@@ -10,7 +10,7 @@ const moment = require('moment');
 // and then instead of `props.user.username` you could use `user.username`
 
 class UserPage extends Component {
-  
+
   render() {
 
     const props = this.props;
@@ -21,7 +21,7 @@ class UserPage extends Component {
           Welcome, {props.user.username}!
     </h1>
         <p>Your ID is: {props.user.id}</p>
-        <p>Member since: {props.user.timestamp}</p>
+        <p>Member since: {moment(props.user.timestamp).format('LL')}</p>
         <p>Email: {props.user.email}</p>
         <p>{props.user.first_name} {props.user.last_name}</p>
         <p>{props.user.city}, {props.user.state}</p>

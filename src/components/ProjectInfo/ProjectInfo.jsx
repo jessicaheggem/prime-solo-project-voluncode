@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Popup from "reactjs-popup";
+const moment = require('moment');
 
 
 class ProjectInfo extends Component {
@@ -25,8 +26,8 @@ class ProjectInfo extends Component {
       <div>
         <h1>Project Info</h1>
         <h3> {this.props.reduxStore.projectInfo.organization_name} </h3>
-        <p> {this.props.reduxStore.projectInfo.start_date} </p>
-        <p> {this.props.reduxStore.projectInfo.end_date} </p>
+        <p> {moment(this.props.reduxStore.projectInfo.start_date).format('LL')} </p>
+        <p> {moment(this.props.reduxStore.projectInfo.end_date).format('LL')} </p>
         <p> {this.props.reduxStore.projectInfo.description} </p>
         <Popup trigger={<button > Contribute </button>} modal>
           {close => (

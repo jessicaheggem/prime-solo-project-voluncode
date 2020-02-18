@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import teal from '@material-ui/core/colors/teal'
+
+const theme = createMuiTheme({
+    palette: {
+        primary: teal,
+        secondary: teal
+    }
+})
 
 class EditProfile extends Component {
     state = {
@@ -39,80 +50,123 @@ class EditProfile extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Edit Profile</h2>
-                First Name: 
-                <input 
-                // defaultValue={this.state.first_name} 
-                value={this.state.first_name} 
-                onChange={(event) => this.editProfile(event, 'first_name')}>
-                </input>
-                <br />
-                Last Name: 
-                <input 
-                // defaultValue={this.state.last_name} 
-                value={this.state.last_name} 
-                onChange={(event) => this.editProfile(event, 'last_name')}>
-                </input>
-                <br />
-                Email: 
-                <input 
-                // defaultValue={this.state.email} 
-                value={this.state.email} 
-                onChange={(event) => this.editProfile(event, 'email')}>
-                </input>
-                <br />
-                City: 
-                <input 
-                // defaultValue={this.state.city} 
-                value={this.state.city} 
-                onChange={(event) => this.editProfile(event, 'city')}>
-                </input>
-                <br />
-                State: 
-                <input 
-                // defaultValue={this.state.state} 
-                value={this.state.state} 
-                onChange={(event) => this.editProfile(event, 'state')}>
-                </input>
-                <br />
-                Job Title/Occupation: 
-                <input 
-                // defaultValue={this.state.occupation} 
-                value={this.state.occupation} 
-                onChange={(event) => this.editProfile(event, 'occupation')}>
-                </input>
-                <br />
-                Github URL or another link to your portfolio: 
-                <input 
-                // defaultValue={this.state.portfolio} 
-                value={this.state.portfolio} 
-                onChange={(event) => this.editProfile(event, 'portfolio')}>
-                </input>
-                <br />
-                How much time can you commit to a project?: 
-                <input 
-                // defaultValue={this.state.time_available} 
-                value={this.state.time_available} 
-                onChange={(event) => this.editProfile(event, 'time_available')}>
-                </input>
-                <br />
-                List your known programming languages: 
-                <textarea 
-                // defaultValue={this.state.languages} 
-                value={this.state.languages} 
-                onChange={(event) => this.editProfile(event, 'languages')}>
-                </textarea>
-                <br />
-                What qualifications do you have? Include degrees, certifications, courses, etc.: 
-                <textarea 
-                // defaultValue={this.state.qualifications} 
-                value={this.state.qualifications} 
-                onChange={(event) => this.editProfile(event, 'qualifications')}>
-                </textarea>
-                <br />
-                <button onClick={this.handleEdit}>Submit Changes</button>
-            </div>
+            <ThemeProvider theme={theme}>
+                <div>
+                    <h2>Edit Profile</h2>
+                    First Name:
+                    <br />
+                <TextField
+                        id="standard-name"
+                        variant="outlined"
+                        margin="dense"
+                        value={this.state.first_name}
+                        onChange={(event) => this.editProfile(event, 'first_name')}
+                    />
+                    <br />
+                    Last Name:
+                    <br />
+                <TextField
+                        id="standard-name"
+                        variant="outlined"
+                        margin="dense"
+                        value={this.state.last_name}
+                        onChange={(event) => this.editProfile(event, 'last_name')}
+                    />
+                    <br />
+                    Email:
+                    <br />
+                <TextField
+                        id="standard-name"
+                        variant="outlined"
+                        margin="dense"
+                        value={this.state.email}
+                        onChange={(event) => this.editProfile(event, 'email')}
+                    />
+                    <br />
+                    City:
+                    <br />
+                <TextField
+                        id="standard-name"
+                        variant="outlined"
+                        margin="dense"
+                        value={this.state.city}
+                        onChange={(event) => this.editProfile(event, 'city')}
+                    />
+                    <br />
+                    State:
+                    <br />
+                <TextField
+                        id="standard-name"
+                        variant="outlined"
+                        margin="dense"
+                        value={this.state.state}
+                        onChange={(event) => this.editProfile(event, 'state')}
+                    />
+                    <br />
+                    Job Title/Occupation:
+                    <br />
+                    <TextField
+                        id="standard-name"
+                        variant="outlined"
+                        margin="dense"
+                        value={this.state.occupation}
+                        onChange={(event) => this.editProfile(event, 'occupation')}
+                    />
+                    <br />
+                    Github URL or another link to your portfolio:
+                    <br />
+                    <TextField
+                        id="standard-name"
+                        variant="outlined"
+                        margin="dense"
+                        value={this.state.portfolio}
+                        onChange={(event) => this.editProfile(event, 'portfolio')}
+                    />
+                    <br />
+                    How much time can you commit to a project?
+                    <br />
+                    <TextField
+                        multiline
+                        rows="4"
+                        margin="dense"
+                        variant="outlined"
+                        value={this.state.time_available}
+                        onChange={(event) => this.editProfile(event, 'time_available')}
+                    />
+                    <br />
+                    List your known programming languages:
+                    <br />
+                    <TextField
+                        multiline
+                        rows="4"
+                        margin="dense"
+                        variant="outlined"
+                        value={this.state.languages}
+                        onChange={(event) => this.editProfile(event, 'languages')}
+                    />
+                    <br />
+                    What qualifications do you have? Include degrees, certifications, courses, etc.
+                    <br />
+                    <TextField
+                        multiline
+                        rows="4"
+                        margin="dense"
+                        variant="outlined"
+                        value={this.state.qualifications}
+                        onChange={(event) => this.editProfile(event, 'qualifications')}
+                    />
+                    <br />
+                    <Button
+                        type="button"
+                        className="link-button"
+                        variant="contained"
+                        color="primary"
+                        onClick={this.handleEdit}>
+                        Submit Changes
+                    </Button>
+                </div>
+            </ThemeProvider>
+
         )
     }
 }
