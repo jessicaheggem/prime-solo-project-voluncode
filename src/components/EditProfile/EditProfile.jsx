@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom';
 
 class EditProfile extends Component {
     state = {
@@ -31,7 +32,7 @@ class EditProfile extends Component {
         this.props.dispatch({
             type: 'SUBMIT_EDIT',
             payload: this.state,
-            url: `/api/edit_profile/${this.state.id}`
+            // url: `/api/edit_profile/${this.state.id}`
         })
         this.props.history.push(`/home`)
     }
@@ -70,4 +71,4 @@ const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-export default connect(mapReduxStateToProps)(EditProfile);
+export default withRouter(connect(mapReduxStateToProps)(EditProfile));

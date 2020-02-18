@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import SelectedProject from '../SelectedProject/SelectedProject'
+import { withRouter } from 'react-router-dom';
 const moment = require('moment');
 
 // this could also be written with destructuring parameters as:
@@ -32,7 +33,7 @@ const UserPage = (props) => (
 
     }}>Edit Profile
     </button>
-    
+
     <br />
     <SelectedProject />
     <br />
@@ -48,4 +49,4 @@ const mapStateToProps = state => ({
 });
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(UserPage);
+export default withRouter(connect(mapStateToProps)(UserPage));
