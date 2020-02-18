@@ -6,6 +6,7 @@ import projectsSaga from './projectsSaga';
 import projectInfoSaga from './projectInfoSaga'
 import developerProjectSaga from './developerProjectSaga'
 import deleteDeveloperProjectSaga from './deleteDeveloperProjectSaga'
+import editSaga from './editSaga'
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -23,5 +24,6 @@ export default function* rootSaga() {
     projectInfoSaga(),
     developerProjectSaga(),
     deleteDeveloperProjectSaga(),
+    editSaga(),
   ]);
 }
