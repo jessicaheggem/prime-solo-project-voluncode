@@ -52,4 +52,21 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
+router.put('/:id', (req, res) => {
+  console.log('in router PUT', req.body);
+  let sqlText = `
+    UPDATE "user" 
+    SET "first_name"=$1, "last_name"=$2, "email"=$3, "city"=$4, "state"=$5, "occupation"=$6, "portfolio"=$7, "time_available"=$8, "languages"=$9, "qualifications"=$10 
+    WHERE "id"=${req.params.id};`;
+  let values = [req.body.first_name, req.body.last_name, req.body.email, req.body.city, req.body.state, req.body.occupation, req.body.portfolio, req.body.time_available, req.body.languages, req.body.qualifications];
+  
+  pool.query(sqlText, values)
+  .then((result) => {
+      res.sendStatus(200);
+  }).catch((error) => {
+      console.log(error);
+      res.sendStatus(500);
+  });
+});
+
 module.exports = router;

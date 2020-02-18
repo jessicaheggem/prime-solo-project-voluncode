@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import SelectedProject from '../SelectedProject/SelectedProject'
@@ -9,37 +9,43 @@ const moment = require('moment');
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
 
+class UserPage extends Component {
+  
+  render() {
 
-const UserPage = (props) => (
+    const props = this.props;
 
-  <div>
-    <h1 id="welcome">
-      Welcome, {props.user.username}!
-  </h1>
-    <p>Your ID is: {props.user.id}</p>
-    <p>Member since: {props.user.timestamp}</p>
-    <p>Email: {props.user.email}</p>
-    <p>{props.user.first_name} {props.user.last_name}</p>
-    <p>{props.user.city}, {props.user.state}</p>
-    <p>{props.user.occupation}</p>
-    <p><b>Portfolio URL:</b> {props.user.portfolio}</p>
-    <p><b>Time available to volunteer:</b> {props.user.time_available}</p>
-    <p><b>Known programming languages:</b> {props.user.languages}</p>
-    <p><b>Qualifications:</b> {props.user.qualifications}</p>
+    return (
+      <div>
+        <h1 id="welcome">
+          Welcome, {props.user.username}!
+    </h1>
+        <p>Your ID is: {props.user.id}</p>
+        <p>Member since: {props.user.timestamp}</p>
+        <p>Email: {props.user.email}</p>
+        <p>{props.user.first_name} {props.user.last_name}</p>
+        <p>{props.user.city}, {props.user.state}</p>
+        <p>{props.user.occupation}</p>
+        <p><b>Portfolio URL:</b> {props.user.portfolio}</p>
+        <p><b>Time available to volunteer:</b> {props.user.time_available}</p>
+        <p><b>Known programming languages:</b> {props.user.languages}</p>
+        <p><b>Qualifications:</b> {props.user.qualifications}</p>
 
-    <button onClick={() => {
-      console.log('clicked Edit Profile');
-      this.props.history.push('/edit_profile')
-
-    }}>Edit Profile
+        <button onClick={() => {
+          console.log('clicked Edit Profile');
+          this.props.history.push('/edit_profile')
+        }}>
+          Edit Profile
     </button>
 
-    <br />
-    <SelectedProject />
-    <br />
-    <LogOutButton className="log-in" />
-  </div >
-);
+        <br />
+        <SelectedProject />
+        <br />
+        <LogOutButton className="log-in" />
+      </div >
+    )
+  }
+}
 
 // Instead of taking everything from state, we just want the user info.
 // if you wanted you could write this code like this:

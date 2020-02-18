@@ -26,7 +26,7 @@ class SelectedProject extends Component {
                 <p><b> End date:</b> {this.props.reduxStore.developerProject.end_date} </p>
                 <p> {this.props.reduxStore.developerProject.description} </p>
                 {/* <button onClick={(event) => { if (window.confirm('Are you sure you want to delete this?')) this.handleDelete(event) }}>Delete Project</button> */}
-                <Popup trigger={<button > Delete Project </button>} modal>
+                <Popup trigger={<button> Delete Project </button>} modal>
                     {close => (
                         <div>
                             <a onClick={close}>&times;</a>
@@ -37,7 +37,11 @@ class SelectedProject extends Component {
                                     onClick={() => { close(); }} >
                                     No
                                 </button>
-                                <button onClick={(event) => { close(this.handleDelete(event)); }}> Yes </button>
+                                <button 
+                                    onClick={(event) => { close(this.handleDelete(event)); 
+                                    }}> 
+                                Yes 
+                                </button>
                             </div>
                         </div>
                     )}

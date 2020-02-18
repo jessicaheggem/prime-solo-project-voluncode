@@ -7,8 +7,8 @@ function* editSaga() {
 
 function* submitEdit(action) {
     console.log('in submit edit', action);
-    let response = yield axios.put(`/api/edit_profile`, action.payload);
-    yield put({ type: 'SET_USER' });
+    let response = yield axios.put(`/api/user/${action.payload.id}`, action.payload);
+    yield put({ type: 'FETCH_USER' });
 
 }
 

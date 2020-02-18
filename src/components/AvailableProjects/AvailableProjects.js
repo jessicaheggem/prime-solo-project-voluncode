@@ -9,10 +9,6 @@ import Popup from "reactjs-popup";
 
 class AvailableProjects extends Component {
 
-  // state = {
-  //   project_id: '',
-  // }
-
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_PROJECTS' })
   }
