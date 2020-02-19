@@ -32,7 +32,7 @@ input {
 }
 
 .log-in, .log-out, .register {
-  background-color: #00acb0;
+  background-color: orange;
   border-radius: 4px;
   color: #f8f8f8;
   min-height: 50px;
@@ -42,7 +42,7 @@ input {
 }
 
 .log-in:hover, .log-out:hover, .register:hover {
-  background-color: #008183;
+  background-color: orange;
 }
 
 /* This line makes the "Register" and "Login" buttons look like links */
@@ -55,4 +55,9 @@ input {
     outline:0;
     border-bottom:1px solid #444; 
     cursor: pointer;
+}
+
+.userPage {
+    margin-left: 50px;
+    margin-right: 50px;
 }

@@ -27,20 +27,23 @@ class UserPage extends Component {
 
     return (
       <ThemeProvider theme={theme}>
-        <div>
+        <div className="userPage">
           <h1 id="welcome">
-            Welcome, {props.user.username}!
+            Welcome, {props.user.first_name} {props.user.last_name}!
     </h1>
           <p>Your ID is: {props.user.id}</p>
-          <p>Member since: {moment(props.user.timestamp).format('LL')}</p>
-          <p>Email: {props.user.email}</p>
-          <p>{props.user.first_name} {props.user.last_name}</p>
+          <p><b>Member since:</b></p> 
+          <p>{moment(props.user.timestamp).format('LL')}</p>
+          <p>{props.user.email}</p>
           <p>{props.user.city}, {props.user.state}</p>
           <p>{props.user.occupation}</p>
-          <p><b>Portfolio URL:</b> {props.user.portfolio}</p>
-          <p><b>Time available to volunteer:</b> {props.user.time_available}</p>
-          <p><b>Known programming languages:</b> {props.user.languages}</p>
-          <p><b>Qualifications:</b> {props.user.qualifications}</p>
+          <p><b>Portfolio URL:</b></p> 
+          <p>{props.user.portfolio}</p>
+          <p><b>Time available to volunteer:</b></p> 
+          <p>{props.user.time_available}</p>
+          <p><b>Known programming languages:</b></p> 
+          <p>{props.user.languages}</p>
+          <p><b>Qualifications:</b></p> <p>{props.user.qualifications}</p>
 
           <Button 
             type="button"
