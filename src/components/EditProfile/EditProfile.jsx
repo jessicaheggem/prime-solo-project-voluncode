@@ -55,50 +55,55 @@ class EditProfile extends Component {
                     <h2>Edit Profile</h2>
                     First Name:
                     <br />
-                <TextField
+                    <TextField
                         id="standard-name"
                         variant="outlined"
                         margin="dense"
+                        style={{ width: 300 }}
                         value={this.state.first_name}
                         onChange={(event) => this.editProfile(event, 'first_name')}
                     />
                     <br />
                     Last Name:
                     <br />
-                <TextField
+                    <TextField
                         id="standard-name"
                         variant="outlined"
                         margin="dense"
+                        style={{ width: 300 }}
                         value={this.state.last_name}
                         onChange={(event) => this.editProfile(event, 'last_name')}
                     />
                     <br />
                     Email:
                     <br />
-                <TextField
+                    <TextField
                         id="standard-name"
                         variant="outlined"
                         margin="dense"
+                        style={{ width: 300 }}
                         value={this.state.email}
                         onChange={(event) => this.editProfile(event, 'email')}
                     />
                     <br />
                     City:
                     <br />
-                <TextField
+                    <TextField
                         id="standard-name"
                         variant="outlined"
                         margin="dense"
+                        style={{ width: 300 }}
                         value={this.state.city}
                         onChange={(event) => this.editProfile(event, 'city')}
                     />
                     <br />
                     State:
                     <br />
-                <TextField
+                    <TextField
                         id="standard-name"
                         variant="outlined"
                         margin="dense"
+                        style={{ width: 300 }}
                         value={this.state.state}
                         onChange={(event) => this.editProfile(event, 'state')}
                     />
@@ -109,6 +114,7 @@ class EditProfile extends Component {
                         id="standard-name"
                         variant="outlined"
                         margin="dense"
+                        style={{ width: 300 }}
                         value={this.state.occupation}
                         onChange={(event) => this.editProfile(event, 'occupation')}
                     />
@@ -119,6 +125,7 @@ class EditProfile extends Component {
                         id="standard-name"
                         variant="outlined"
                         margin="dense"
+                        style={{ width: 300 }}
                         value={this.state.portfolio}
                         onChange={(event) => this.editProfile(event, 'portfolio')}
                     />
@@ -130,6 +137,7 @@ class EditProfile extends Component {
                         rows="4"
                         margin="dense"
                         variant="outlined"
+                        style={{ width: 300 }}
                         value={this.state.time_available}
                         onChange={(event) => this.editProfile(event, 'time_available')}
                     />
@@ -141,6 +149,7 @@ class EditProfile extends Component {
                         rows="4"
                         margin="dense"
                         variant="outlined"
+                        style={{ width: 300 }}
                         value={this.state.languages}
                         onChange={(event) => this.editProfile(event, 'languages')}
                     />
@@ -152,6 +161,7 @@ class EditProfile extends Component {
                         rows="4"
                         margin="dense"
                         variant="outlined"
+                        style={{ width: 300 }}
                         value={this.state.qualifications}
                         onChange={(event) => this.editProfile(event, 'qualifications')}
                     />

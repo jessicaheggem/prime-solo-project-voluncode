@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import teal from '@material-ui/core/colors/teal'
+import orange from '@material-ui/core/colors/orange'
 
 const theme = createMuiTheme({
   palette: {
-    primary: teal,
-    secondary: teal
+    primary: orange,
+    secondary: orange
   }
 })
 

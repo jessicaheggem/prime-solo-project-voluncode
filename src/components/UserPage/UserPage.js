@@ -5,13 +5,13 @@ import SelectedProject from '../SelectedProject/SelectedProject'
 import { withRouter } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import teal from '@material-ui/core/colors/teal'
+import orange from '@material-ui/core/colors/orange'
 const moment = require('moment');
 
 const theme = createMuiTheme({
   palette: {
-    primary: teal,
-    secondary: teal
+    primary: orange,
+    secondary: orange
   }
 })
 
@@ -42,7 +42,8 @@ class UserPage extends Component {
           <p><b>Known programming languages:</b> {props.user.languages}</p>
           <p><b>Qualifications:</b> {props.user.qualifications}</p>
 
-          <Button type="button"
+          <Button 
+            type="button"
             className="link-button"
             variant="contained"
             color="primary"

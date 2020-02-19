@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 import Popup from "reactjs-popup";
 import Button from '@material-ui/core/Button';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import teal from '@material-ui/core/colors/teal'
+import orange from '@material-ui/core/colors/orange'
 import red from '@material-ui/core/colors/red'
+import DeleteIcon from '@material-ui/icons/Delete';
 const moment = require('moment');
 
 const theme = createMuiTheme({
     palette: {
-        primary: teal,
+        primary: orange,
         secondary: red
     }
 })
@@ -48,6 +49,7 @@ class SelectedProject extends Component {
                                 variant="contained"
                                 color="secondary">
                                 Delete Project
+                                <DeleteIcon />
                             </Button>
                         }
                         modal>

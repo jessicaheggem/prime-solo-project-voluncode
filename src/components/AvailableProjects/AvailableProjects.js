@@ -47,9 +47,8 @@ class AvailableProjects extends Component {
                 <h3 onClick={() => this.handleNameClick(project.id)} >
                   {project.organization_name}
                 </h3>
+                <p>{moment(this.props.reduxStore.developerProject.start_date).format('LL')} - {moment(this.props.reduxStore.developerProject.end_date).format('LL')}</p>
                 <p>{project.description}</p>
-                <p>{moment(project.start_date).format('LL')}</p>
-                <p>{moment(project.end_date).format('LL')}</p>
 
                 {/* <Popup trigger={<button> Contribute </button>} modal>
                   {close => (
