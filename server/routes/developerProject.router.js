@@ -27,7 +27,7 @@ router.delete('/:id', (req, res) => {
     // if (loggedin_user == user_id) {
     const queryText =
         `DELETE FROM "user_project" 
-        WHERE "user_project".id = $1;`
+        WHERE id = $1;`
     console.log('in delete project route')
     pool.query(queryText, [req.params.id])
         .then(() => { 

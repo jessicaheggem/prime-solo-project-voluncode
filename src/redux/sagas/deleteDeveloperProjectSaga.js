@@ -7,12 +7,10 @@ function* deleteDeveloperProjectSaga() {
 
 function* deleteDeveloperProject(action) {
     console.log(action.payload);
-    
     try {
         let response = yield axios.delete(`/api/developer_project/${action.payload}`);
         console.log(response.data);
         yield put({ type: 'FETCH_DEVELOPER_PROJECT' })
-
     }
     catch (error) {
         console.log('Error deleting developer project', error)
