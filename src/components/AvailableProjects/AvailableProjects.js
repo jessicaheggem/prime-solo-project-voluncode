@@ -11,7 +11,8 @@ const moment = require('moment');
 class AvailableProjects extends Component {
 
   componentDidMount() {
-    this.props.dispatch({ type: 'FETCH_PROJECTS' })
+    this.props.dispatch
+    ({ type: 'FETCH_PROJECTS' })
   }
 
   handleNameClick = (id) => {
@@ -23,22 +24,15 @@ class AvailableProjects extends Component {
     this.props.history.push(`/project_info/${id}`);
   }
 
-  handleYesClick = () => {
-    // console.log('clicked YES');
-    // this.props.dispatch({
-    //   type: 'POST_PROJECT',
-    //   payload: {
-    //     project_id: this.props.reduxStore.projectInfo.id
-    //   }
-    // })
-    // this.props.history.push(`/home`);
-    this.props.history.push('/confirmation')
-  }
+  // handleYesClick = () => {
+  //   this.props.history.push('/confirmation')
+  // }
 
   render() {
     return (
-      <div>
+      <div className="content">
         <h1>Available Projects</h1>
+        {/* {JSON.stringify(this.props.reduxStore.projectInfo)} */}
         <ul>
           {/* projects.map : the word projects connects back to the renamed reducer in reducer/index.js in the combineReducers */}
           {this.props.reduxStore.projects.map(project =>
@@ -47,7 +41,7 @@ class AvailableProjects extends Component {
                 <h3 onClick={() => this.handleNameClick(project.id)} >
                   {project.organization_name}
                 </h3>
-                <p>{moment(this.props.reduxStore.developerProject.start_date).format('LL')} - {moment(this.props.reduxStore.developerProject.end_date).format('LL')}</p>
+                <p>{moment(project.start_date).format('LL')} - {moment(project.end_date).format('LL')}</p>
                 <p>{project.description}</p>
 
                 {/* <Popup trigger={<button> Contribute </button>} modal>
@@ -75,7 +69,8 @@ class AvailableProjects extends Component {
 };
 
 const mapReduxStateToProps = (reduxStore) => ({
-  reduxStore
+  reduxStore,
+  // projectInfo 
 })
 
 export default connect(mapReduxStateToProps)(AvailableProjects);

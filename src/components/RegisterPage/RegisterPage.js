@@ -75,7 +75,7 @@ class RegisterPage extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div className="registrationPage">
+        <div className="registrationPage content">
           {this.props.errors.registrationMessage && (
             <h2
               className="alert"

@@ -4,7 +4,7 @@ const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText =
         `SELECT * FROM "project"
         JOIN "user_project" ON "project".id = "user_project".project_id
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
         })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
     console.log(req.user.id, req.params.id)
     // if (loggedin_user == user_id) {
     const queryText =

@@ -4,12 +4,13 @@ import { withRouter } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import teal from '@material-ui/core/colors/teal'
+import orange from '@material-ui/core/colors/orange'
+import red from '@material-ui/core/colors/red'
 
 const theme = createMuiTheme({
     palette: {
-        primary: teal,
-        secondary: teal
+        primary: orange,
+        secondary: red
     }
 })
 
@@ -48,10 +49,14 @@ class EditProfile extends Component {
         this.props.history.push(`/home`)
     }
 
+    handleCancel = () => {
+        this.props.history.push('/home')
+    }
+
     render() {
         return (
             <ThemeProvider theme={theme}>
-                <div>
+                <div className="content">
                     <h2>Edit Profile</h2>
                     First Name:
                     <br />
@@ -170,13 +175,20 @@ class EditProfile extends Component {
                         type="button"
                         className="link-button"
                         variant="contained"
+                        color="secondary"
+                        onClick={this.handleCancel}>
+                        Cancel
+                    </Button>
+                    <Button
+                        type="button"
+                        className="link-button"
+                        variant="contained"
                         color="primary"
                         onClick={this.handleEdit}>
                         Submit Changes
                     </Button>
                 </div>
             </ThemeProvider>
-
         )
     }
 }

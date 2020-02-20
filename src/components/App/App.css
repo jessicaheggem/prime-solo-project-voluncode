@@ -55,11 +55,17 @@ input {
     padding:0;
     font: inherit;
     outline:0;
-    border-bottom:1px solid #444; 
+    border-bottom:1px solid #f8f8f8; 
     cursor: pointer;
 }
 
-.userPage {
+.content {
+    margin-top: 100px;
     margin-left: 50px;
     margin-right: 50px;
+}
+
+.confirmation {
+    text-align: center;
+    margin-top: 75px;
 }

@@ -86,7 +86,7 @@ class SelectedProject extends Component {
         return (
             <ThemeProvider theme={theme}>
                 <div>
-                    <h2>Your Project:</h2>
+                    <h2>Current Project:</h2>
                     {/* variable to eval ? TRUTHY : FALSY */}
                     {project.id ? projectInfo : <p>Select a project!</p>}
                     {/* {JSON.stringify(this.props.reduxStore.developerProject)} */}

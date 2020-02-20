@@ -10,6 +10,11 @@
 .nav {
   overflow: hidden;
   background-color: orange;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* padding-top: 60px; */
+
 }
 
 .nav-link {
@@ -26,6 +31,7 @@
   border:none;
   cursor: pointer;
   outline:0;
+  font-family: "Lucida Console", Monaco, monospace;
 
 }
 

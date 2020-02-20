@@ -15,9 +15,6 @@ const theme = createMuiTheme({
 })
 
 class ProjectInfo extends Component {
-  componentDidMount() {
-    this.props.dispatch({ type: 'FETCH_PROJECT_INFO' })
-  }
 
   state = {
     project_id: '',
@@ -39,10 +36,10 @@ class ProjectInfo extends Component {
     return (
       <ThemeProvider theme={theme}>
 
-        <div>
+        <div className="content">
           <h1>Project Info</h1>
           <h3> {this.props.reduxStore.projectInfo.organization_name} </h3>
-          <p> {moment(this.props.reduxStore.developerProject.start_date).format('LL')} - {moment(this.props.reduxStore.developerProject.end_date).format('LL')} </p>
+          <p> {moment(this.props.reduxStore.projectInfo.start_date).format('LL')} - {moment(this.props.reduxStore.projectInfo.end_date).format('LL')} </p>
           <p> {this.props.reduxStore.projectInfo.description} </p>
           <Popup
             trigger={

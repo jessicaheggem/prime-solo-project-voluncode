@@ -23,28 +23,27 @@ class UserPage extends Component {
 
   render() {
 
-    const props = this.props;
-    console.log('on user page', props.state.developerProject);
+    const user = this.props.user;
 
     return(
       <ThemeProvider theme={theme}>
-          <div className="userPage">
+          <div className="content">
             <h1 id="welcome">
-              Welcome, {props.user.first_name} {props.user.last_name}!
-    </h1>
-            <p>Your ID is: {props.user.id}</p>
+              Welcome, {user.first_name} {user.last_name}!
+            </h1>
+            <p>Your ID is: {user.id}</p>
             <p><b>Member since:</b></p>
-            <p>{moment(props.user.timestamp).format('LL')}</p>
-            <p>{props.user.email}</p>
-            <p>{props.user.city}, {props.user.state}</p>
-            <p>{props.user.occupation}</p>
+            <p>{moment(user.timestamp).format('LL')}</p>
+            <p>{user.email}</p>
+            <p>{user.city}, {user.state}</p>
+            <p>{user.occupation}</p>
             <p><b>Portfolio URL:</b></p>
-            <p>{props.user.portfolio}</p>
+            <p>{user.portfolio}</p>
             <p><b>Time available to volunteer:</b></p>
-            <p>{props.user.time_available}</p>
+            <p>{user.time_available}</p>
             <p><b>Known programming languages:</b></p>
-            <p>{props.user.languages}</p>
-            <p><b>Qualifications:</b></p> <p>{props.user.qualifications}</p>
+            <p>{user.languages}</p>
+            <p><b>Qualifications:</b></p> <p>{user.qualifications}</p>
             <Button
               type="button"
               className="link-button"

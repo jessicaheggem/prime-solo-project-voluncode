@@ -21,7 +21,7 @@ const LogOutButton = props => (
       // is passed to it from it's parents through React props
       onClick={() => props.dispatch({ type: 'LOGOUT' })}
     >
-      Log Out
+      LOGOUT
   </button>
   </ThemeProvider>
 );

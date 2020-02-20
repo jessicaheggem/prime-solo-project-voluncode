@@ -23,7 +23,7 @@ class Confirmation extends Component {
         return (
             <ThemeProvider theme={theme}>
 
-                <div>
+                <div className="confirmation content">
                     <h2>You are now a contributor of this project!</h2>
                     <Button
                         type="button"
