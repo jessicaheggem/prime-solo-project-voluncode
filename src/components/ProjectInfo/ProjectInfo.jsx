@@ -40,6 +40,7 @@ class ProjectInfo extends Component {
           <h1>Project Info</h1>
           <h3> {this.props.reduxStore.projectInfo.organization_name} </h3>
           <p> {moment(this.props.reduxStore.projectInfo.start_date).format('LL')} - {moment(this.props.reduxStore.projectInfo.end_date).format('LL')} </p>
+          <p> {this.props.reduxStore.projectInfo.website} | {this.props.reduxStore.projectInfo.email}</p>
           <p> {this.props.reduxStore.projectInfo.description} </p>
           <Popup
             trigger={

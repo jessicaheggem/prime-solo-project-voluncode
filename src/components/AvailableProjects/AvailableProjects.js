@@ -12,7 +12,7 @@ class AvailableProjects extends Component {
 
   componentDidMount() {
     this.props.dispatch
-    ({ type: 'FETCH_PROJECTS' })
+      ({ type: 'FETCH_PROJECTS' })
   }
 
   handleNameClick = (id) => {
@@ -42,6 +42,7 @@ class AvailableProjects extends Component {
                   {project.organization_name}
                 </h3>
                 <p>{moment(project.start_date).format('LL')} - {moment(project.end_date).format('LL')}</p>
+                <p>{project.website} | {project.email}</p>
                 <p>{project.description}</p>
 
                 {/* <Popup trigger={<button> Contribute </button>} modal>
