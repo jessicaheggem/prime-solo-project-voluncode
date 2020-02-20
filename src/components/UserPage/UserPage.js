@@ -56,9 +56,12 @@ class UserPage extends Component {
               Edit Profile
           </Button>
             <br />
+            <br />
+            <br />
+            <br />
             <SelectedProject />
             <br />
-            <LogOutButton className="log-in" />
+            {/* <LogOutButton className="log-in" /> */}
           </div >
         </ThemeProvider>
       )

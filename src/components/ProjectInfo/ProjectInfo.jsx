@@ -32,6 +32,10 @@ class ProjectInfo extends Component {
     this.props.history.push('/confirmation')
   }
 
+  handleBackClick = () => {
+    this.props.history.push('/projects')
+  }
+
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -42,6 +46,14 @@ class ProjectInfo extends Component {
           <p> {moment(this.props.reduxStore.projectInfo.start_date).format('LL')} - {moment(this.props.reduxStore.projectInfo.end_date).format('LL')} </p>
           <p> {this.props.reduxStore.projectInfo.website} | {this.props.reduxStore.projectInfo.email}</p>
           <p> {this.props.reduxStore.projectInfo.description} </p>
+          <Button
+                    type="button"
+                    className="link-button"
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => this.handleBackClick()}>
+                    Back to Projects
+                  </Button>
           <Popup
             trigger={
               <Button

@@ -33,8 +33,8 @@ class AvailableProjects extends Component {
       <div className="content">
         <h1>Available Projects</h1>
         {/* {JSON.stringify(this.props.reduxStore.projectInfo)} */}
+        {/* projects.map : the word projects connects back to the renamed reducer in reducer/index.js in the combineReducers */}
         <ul>
-          {/* projects.map : the word projects connects back to the renamed reducer in reducer/index.js in the combineReducers */}
           {this.props.reduxStore.projects.map(project =>
             <li key={project.id}>
               <div>
