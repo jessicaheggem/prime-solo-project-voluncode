@@ -4,11 +4,12 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import orange from '@material-ui/core/colors/orange'
+import blueGrey from '@material-ui/core/colors/blueGrey'
 
 const theme = createMuiTheme({
   palette: {
     primary: orange,
-    secondary: orange
+    secondary: blueGrey
   }
 })
 
@@ -247,7 +248,7 @@ class RegisterPage extends Component {
                 className="register"
                 type="submit"
                 name="submit"
-                value="Register"
+                value="REGISTER"
               />
             </div>
           </form>
@@ -256,7 +257,7 @@ class RegisterPage extends Component {
               type="button"
               className="link-button"
               variant="contained"
-              color="primary"
+              color="secondary"
               onClick={() => { this.props.dispatch({ type: 'SET_TO_LOGIN_MODE' }) }}
             >
               Login

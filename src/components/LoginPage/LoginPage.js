@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import teal from '@material-ui/core/colors/teal'
+import orange from '@material-ui/core/colors/orange'
+import blueGrey from '@material-ui/core/colors/blueGrey'
 
 const theme = createMuiTheme({
   palette: {
-    primary: teal,
-    secondary: teal
+    primary: orange,
+    secondary: blueGrey
   }
 })
 
@@ -92,7 +93,7 @@ class LoginPage extends Component {
                 className="log-in"
                 type="submit"
                 name="submit"
-                value="Log In"
+                value="LOGIN"
               />
             </div>
           </form>
@@ -100,6 +101,8 @@ class LoginPage extends Component {
             <Button
               type="button"
               className="link-button"
+              variant="contained"
+              color="secondary"
               onClick={() => { this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' }) }}
             >
               Register
