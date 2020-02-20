@@ -52,7 +52,7 @@ class ProjectInfo extends Component {
                 variant="contained"
                 color="primary">
                 Contribute
-          </Button>}
+              </Button>}
             modal>
             {close => (
               <div>
@@ -66,7 +66,7 @@ class ProjectInfo extends Component {
                     color="secondary"
                     onClick={() => { close(); }} >
                     No
-                </Button>
+                  </Button>
                   <Button
                     type="button"
                     className="link-button"
