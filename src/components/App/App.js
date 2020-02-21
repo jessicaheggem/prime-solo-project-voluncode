@@ -13,7 +13,7 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
-import AboutPage from '../AboutPage/AboutPage';
+import HomePage from '../HomePage/HomePage';
 import UserPage from '../UserPage/UserPage';
 import AvailableProjects from '../AvailableProjects/AvailableProjects';
 import ProjectInfo from '../ProjectInfo/ProjectInfo';
@@ -35,14 +35,14 @@ class App extends Component {
         <div>
           <Nav />
           <Switch>
-            {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-            <Redirect exact from="/" to="/home" />
-            {/* Visiting localhost:3000/about will show the about page.
+            {/* Visiting localhost:3000 will redirect to localhost:3000/dashboard */}
+            <Redirect exact from="/" to="/dashboard" />
+            {/* Visiting localhost:3000/dashboard will show the dashboard page.
             This is a route anyone can see, no login necessary */}
             <Route
               exact
-              path="/about"
-              component={AboutPage}
+              path="/home"
+              component={HomePage}
             />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
@@ -50,7 +50,7 @@ class App extends Component {
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
             <ProtectedRoute
               exact
-              path="/home"
+              path="/dashboard"
               component={UserPage}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,

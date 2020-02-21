@@ -14,9 +14,9 @@ const theme = createMuiTheme({
 })
 
 class Confirmation extends Component {
-    handleHomeClick = () => {
+    handleDashClick = () => {
         // console.log('clicked YES');
-        this.props.history.push('/home')
+        this.props.history.push('/dashboard')
     }
 
     render() {
@@ -30,8 +30,8 @@ class Confirmation extends Component {
                         className="link-button"
                         variant="contained"
                         color="primary"
-                        onClick={() => this.handleHomeClick()} >
-                        Back to Home
+                        onClick={() => this.handleDashClick()} >
+                        Back to Dashboard
                     </Button>
                 </div>
             </ThemeProvider>

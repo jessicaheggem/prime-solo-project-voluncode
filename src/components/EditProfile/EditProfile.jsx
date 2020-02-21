@@ -46,11 +46,11 @@ class EditProfile extends Component {
             payload: this.state,
             // url: `/api/edit_profile/${this.state.id}`
         })
-        this.props.history.push(`/home`)
+        this.props.history.push(`/dashboard`)
     }
 
     handleCancel = () => {
-        this.props.history.push('/home')
+        this.props.history.push('/dashboard')
     }
 
     render() {

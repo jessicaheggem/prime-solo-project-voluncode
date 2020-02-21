@@ -31,11 +31,14 @@ class UserPage extends Component {
             <h1 id="welcome">
               Welcome, {user.first_name} {user.last_name}!
             </h1>
-            <p>Your ID is: {user.id}</p>
+            {/* <p>Your ID is: {user.id}</p> */}
             <p><b>Member since:</b></p>
             <p>{moment(user.timestamp).format('LL')}</p>
+            <p><b>Email:</b></p>
             <p>{user.email}</p>
+            <p><b>Located:</b></p>
             <p>{user.city}, {user.state}</p>
+            <p><b>Occupation:</b></p>
             <p>{user.occupation}</p>
             <p><b>Portfolio URL:</b></p>
             <p>{user.portfolio}</p>
