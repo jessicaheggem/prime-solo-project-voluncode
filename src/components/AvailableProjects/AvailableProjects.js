@@ -51,8 +51,8 @@ class AvailableProjects extends Component {
               <li key={project.id}>
                 <div>
                   <Link
+                    className="availableProjectsHeading"
                     component="button"
-                    variant="body1"
                     color="primary"
                     onClick={() => this.handleNameClick(project.id)} ><b>
                       {project.organization_name}
@@ -60,22 +60,6 @@ class AvailableProjects extends Component {
                   <p>{moment(project.start_date).format('LL')} - {moment(project.end_date).format('LL')}</p>
                   <p>{project.website} | {project.email}</p>
                   <p>{project.description}</p>
-
-                  {/* <Popup trigger={<button> Contribute </button>} modal>
-                  {close => (
-                    <div>
-                      <a onClick={close}>&times;</a>
-                      <h2>Are you sure you want to contribute?</h2>
-                      <div>
-                        <button
-                          onClick={() => { close(); }} >
-                          No
-                        </button>
-                        <button onClick={() => this.handleYesClick()}> Yes </button>
-                      </div>
-                    </div>
-                  )}
-                </Popup> */}
                 </div>
               </li>
             )}

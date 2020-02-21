@@ -52,15 +52,16 @@ class SelectedProject extends Component {
                             type="button"
                             className="link-button"
                             variant="contained"
-                            color="secondary">
+                            color="secondary"
+                            >
                             Delete Project
                         <DeleteIcon />
                         </Button>
                     }
                     modal>
                     {close => (
-                        <div>
-                            <a onClick={close}>&times;</a>
+                        <div className="popup">
+                            {/* <a onClick={close}>&times;</a> */}
                             <h2>Are you sure you want to delete this project?</h2>
                             <p>This action cannot be undone.</p>
                             <div>
@@ -71,7 +72,7 @@ class SelectedProject extends Component {
                                     color="primary"
                                     onClick={() => { close(); }} >
                                     No
-                        </Button>
+                                </Button>
                                 <Button
                                     type="button"
                                     className="link-button"

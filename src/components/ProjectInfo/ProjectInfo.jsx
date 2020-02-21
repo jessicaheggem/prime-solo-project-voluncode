@@ -48,14 +48,14 @@ class ProjectInfo extends Component {
           <p> {moment(project.start_date).format('LL')} - {moment(project.end_date).format('LL')} </p>
           <p> {project.website} | {project.email}</p>
           <p> {project.description} </p>
-                  <Button
-                    type="button"
-                    className="link-button"
-                    variant="contained"
-                    color="secondary"
-                    onClick={() => this.handleBackClick()}>
-                    Back to Projects
-                  </Button>
+          <Button
+            type="button"
+            className="link-button"
+            variant="contained"
+            color="secondary"
+            onClick={() => this.handleBackClick()}>
+            Back to Projects
+          </Button>
           <Popup
             trigger={
               <Button
@@ -67,9 +67,8 @@ class ProjectInfo extends Component {
               </Button>}
             modal>
             {close => (
-              <div>
-                <a onClick={close}>&times;</a>
-                <h2>Are you sure you want to contribute?</h2>
+            <div className="popup">
+                <h2>Are you sure you want to contribute to this project?</h2>
                 <div>
                   <Button
                     type="button"
