@@ -8,7 +8,7 @@ import './Footer.css'
 
 const Footer = () => (
   <footer>
-    &copy; 2020 Voluncode
+    &copy; 2020 VOLUNCODE
   </footer>
 );
 

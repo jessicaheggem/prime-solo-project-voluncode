@@ -111,7 +111,6 @@ img{
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
     width: 100%; /* Full width */
-    padding: 20px; /* Some padding */
 }
 
 .container {
