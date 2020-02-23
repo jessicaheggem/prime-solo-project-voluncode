@@ -40,8 +40,7 @@ class SelectedProject extends Component {
         let projectInfo = (
             <>
                 <h3> {project.organization_name} </h3>
-                <p><b> Estimated Project Timeline:</b></p>
-                <p>{moment(this.props.reduxStore.developerProject.start_date).format('LL')} - {moment(this.props.reduxStore.developerProject.end_date).format('LL')} </p>
+                <p><b> Estimated Project Timeline:</b> {moment(this.props.reduxStore.developerProject.start_date).format('LL')} - {moment(this.props.reduxStore.developerProject.end_date).format('LL')} </p>
                 <p> {this.props.reduxStore.developerProject.website} | {this.props.reduxStore.developerProject.email}</p>
                 <p> {this.props.reduxStore.developerProject.description} </p>
                 {/* <button onClick={(event) => { if (window.confirm('Are you sure you want to delete this?')) this.handleDelete(event) }}>Delete Project</button> */}
