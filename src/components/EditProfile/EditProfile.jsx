@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import orange from '@material-ui/core/colors/orange'
 import red from '@material-ui/core/colors/red'
+import Popup from 'reactjs-popup'
 
 const theme = createMuiTheme({
     palette: {
@@ -38,7 +39,7 @@ class EditProfile extends Component {
         })
     }
 
-    handleEdit = () => {
+    handleSubmitEdit = () => {
         // dispatches edit to redux
         console.log('clicking to submit edit', this.state);
         this.props.dispatch({
@@ -179,14 +180,43 @@ class EditProfile extends Component {
                         onClick={this.handleCancel}>
                         Cancel
                     </Button>
-                    <Button
-                        type="button"
-                        className="link-button"
-                        variant="contained"
-                        color="primary"
-                        onClick={this.handleEdit}>
-                        Submit Changes
-                    </Button>
+
+                    <Popup
+                        trigger={
+                            <Button
+                                type="button"
+                                className="link-button"
+                                variant="contained"
+                                color="primary"
+                            >
+                                Submit Changes
+                            </Button>}
+                        modal>
+                        {close => (
+                            <div className="popup">
+                                <h2>Are you sure you want to submit these changes?</h2>
+                                <div>
+                                    <Button
+                                        type="button"
+                                        className="link-button"
+                                        variant="contained"
+                                        color="secondary"
+                                        onClick={() => { close(); }} >
+                                        No
+                                    </Button>
+                                    <Button
+                                        type="button"
+                                        className="link-button"
+                                        variant="contained"
+                                        color="primary"
+                                        onClick={() => this.handleSubmitEdit()}>
+                                        Yes
+                                    </Button>
+                                </div>
+                            </div>
+                        )}
+                    </Popup>
+
                 </div>
             </ThemeProvider>
         )
