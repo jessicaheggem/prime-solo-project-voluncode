@@ -180,7 +180,6 @@ class EditProfile extends Component {
                         onClick={this.handleCancel}>
                         Cancel
                     </Button>
-
                     <Popup
                         trigger={
                             <Button
@@ -216,7 +215,6 @@ class EditProfile extends Component {
                             </div>
                         )}
                     </Popup>
-
                 </div>
             </ThemeProvider>
         )
