@@ -1,13 +1,6 @@
 # Prime Project
 This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
-
-## Download (Don't Clone) This Repository
-
-* Don't Fork or Clone. Instead, click the `Clone or Download` button and select `Download Zip`.
-* Unzip the project and start with the code in that folder.
-* Create a new GitHub project and push this code to the new repository.
 
 ## Prerequisites
 
@@ -17,19 +10,52 @@ Before you get started, make sure you have the following software installed on y
 - [PostrgeSQL](https://www.postgresql.org/)
 - [Nodemon](https://nodemon.io/)
 
-## Create database and table
+## Create database and tables
 
-Create a new database called `prime_app` and create a `user` table:
+Create a new database called `voluncode` and create a `user`, `project`, & `user_project` table. Insert the test data into the project table so you have some information to start with:
 
 ```SQL
 CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
+	"id" SERIAL PRIMARY KEY,
+	"first_name" VARCHAR(255) NOT NULL,
+	"last_name" VARCHAR(255) NOT NULL,
+	"email" VARCHAR(255) NOT NULL,
+	"username" VARCHAR(80) UNIQUE NOT NULL,
+	"password" VARCHAR(1000) NOT NULL,
+	"city" VARCHAR(255) NOT NULL,
+	"state" VARCHAR(255) NOT NULL,
+	"occupation" VARCHAR(255) NOT NULL,
+	"portfolio" VARCHAR(255) NOT NULL,
+	"time_available" VARCHAR(255) NOT NULL,
+	"languages" VARCHAR(255) NOT NULL,
+	"qualifications" VARCHAR(255) NOT NULL,
+	"timestamp" TIMESTAMP
 );
-```
 
-If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`
+CREATE TABLE "project" (
+	"id" SERIAL PRIMARY KEY,
+	"organization_name" VARCHAR(100) NOT NULL,
+	"website" VARCHAR(255),
+	"email" VARCHAR(255) NOT NULL,
+	"description" TEXT NOT NULL,
+	"start_date" DATE NOT NULL,
+	"end_date" DATE NOT NULL
+);
+
+CREATE TABLE "user_project" (
+	"id" SERIAL PRIMARY KEY,
+	"user_id" INT REFERENCES "user",
+	"project_id" INT REFERENCES "project"
+);
+
+INSERT INTO "project" ("organization_name", "website", "email", "description", "start_date", "end_date")
+VALUES ('Test Organization', 'website.org', 'website@email.org', 'Lorem ipsum dolor sit amet, 
+ consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+ aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+ laborum.', '1-1-2020', '12-31-2020'),
+```
 
 ## Development Setup Instructions
 
@@ -90,12 +116,18 @@ This code is also heavily commented. We recommend reading through the comments, 
 
 * src/components
   * App/App
+  * AvailableProjects/AvailableProjects
+  * Confirmation/Confirmation
+  * EditConfirmation/EditConfirmation
+  * EditProfile/EditProfile
   * Footer/Footer
   * Nav/Nav
   * HomePage/HomePage
   * InfoPage/InfoPage
   * UserPage/UserPage
   * LoginPage/LoginPage
+  * ProjectInfo/ProjectInfo
+  * SelectedProject/SelectedProject
   * RegisterPage/RegisterPage
   * LogOutButton/LogOutButton
   * ProtectedRoute/ProtectedRoute
@@ -103,13 +135,13 @@ This code is also heavily commented. We recommend reading through the comments, 
 ## Deployment
 
 1. Create a new Heroku project
-1. Link the Heroku project to the project GitHub Repo
-1. Create an Heroku Postgres database
-1. Connect to the Heroku Postgres database from Postico
-1. Create the necessary tables
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-1. In the deploy section, select manual deploy
+2. Link the Heroku project to the project GitHub Repo
+3. Create a Heroku Postgres database
+4. Connect to the Heroku Postgres database from Postico
+5. Create the necessary tables
+6. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
+7. In the deploy section, select manual deploy
 
 ## Update Documentation
 
-Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
