@@ -14,9 +14,9 @@ class HomePage extends Component {
         <div className="centered homePageTxt">
         <h1 className="homePageWelcome">WELCOME TO VOLUNCODE</h1>
         <p className="homePageImgText">
-          Voluncode is a platform where developers can volunteer to develop
+          Voluncode is a platform where web developers can volunteer to 
           <br/>
-           websites or apps for Minnesota-based non-profit organizations.
+          build websites for Minnesota-based non-profit organizations.
         </p>
           </div>
 
