@@ -10,22 +10,25 @@ body {
     margin: 50px;
 }
 
-form {
-    background-color: #dbd5d5;
-    width: 30%;
+.registrationPage {
     height: 1250px;
     margin: 20px auto;
-    padding: 25px;
-    border-radius: 2px;
+    width: 21em;
+    margin-top: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: left;
+    padding: 15px 50px 5px 50px;
 }
 
 .loginForm {
-    background-color: #dbd5d5;
-    width: 30%;
     height: 250px;
     margin: 20px auto;
     padding: 25px;
-    border-radius: 2px;
+    width: 21em;
+    margin-top: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: left;
+    padding: 15px 5px 30px 60px;
 }
 
 input {

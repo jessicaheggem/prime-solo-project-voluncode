@@ -65,6 +65,7 @@ class LoginPage extends Component {
                   id="standard-name"
                   label="Username"
                   margin="dense"
+                  style={{ width: 250 }}
                   value={this.state.username}
                   onChange={this.handleInputChangeFor('username')}
                 />
@@ -83,6 +84,7 @@ class LoginPage extends Component {
                   autoComplete="current-password"
                   margin="dense"
                   placeholder="Password"
+                  style={{ width: 250 }}
                   value={this.state.password}
                   onChange={this.handleInputChangeFor('password')}
                 />

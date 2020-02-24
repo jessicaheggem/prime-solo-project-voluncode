@@ -76,7 +76,7 @@ class RegisterPage extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div className="registrationPage content">
+        <div className="registrationPage">
           {this.props.errors.registrationMessage && (
             <h2
               className="alert"
@@ -94,6 +94,7 @@ class RegisterPage extends Component {
                   id="standard-required"
                   label="First Name"
                   margin="dense"
+                  style={{ width: 250 }}
                   value={this.state.firstName}
                   onChange={this.handleInputChangeFor('firstName')}
                 />
@@ -106,6 +107,7 @@ class RegisterPage extends Component {
                   id="standard-required"
                   label="Last Name"
                   margin="dense"
+                  style={{ width: 250 }}
                   value={this.state.lastName}
                   onChange={this.handleInputChangeFor('lastName')}
                 />
@@ -118,6 +120,7 @@ class RegisterPage extends Component {
                   id="standard-required"
                   label="Email"
                   margin="dense"
+                  style={{ width: 250 }}
                   value={this.state.email}
                   onChange={this.handleInputChangeFor('email')}
                 />
@@ -130,6 +133,7 @@ class RegisterPage extends Component {
                   id="standard-name"
                   label="Username"
                   margin="dense"
+                  style={{ width: 250 }}
                   value={this.state.username}
                   onChange={this.handleInputChangeFor('username')}
                 />
@@ -144,6 +148,7 @@ class RegisterPage extends Component {
                   type="password"
                   autoComplete="current-password"
                   margin="dense"
+                  style={{ width: 250 }}
                   helperText="Minimum of 6 characters"
                   value={this.state.password}
                   onChange={this.handleInputChangeFor('password')}
@@ -157,6 +162,7 @@ class RegisterPage extends Component {
                   id="standard-name"
                   label="City"
                   margin="dense"
+                  style={{ width: 250 }}
                   value={this.state.city}
                   onChange={this.handleInputChangeFor('city')}
                 />
@@ -169,6 +175,7 @@ class RegisterPage extends Component {
                   id="standard-name"
                   label="State"
                   margin="dense"
+                  style={{ width: 250 }}
                   value={this.state.state}
                   onChange={this.handleInputChangeFor('state')}
                 />
@@ -181,6 +188,7 @@ class RegisterPage extends Component {
                   id="standard-name"
                   label="Job Title/Occupation"
                   margin="dense"
+                  style={{ width: 250 }}
                   value={this.state.occupation}
                   onChange={this.handleInputChangeFor('occupation')}
                 />
@@ -194,6 +202,7 @@ class RegisterPage extends Component {
                   placeholder="i.e. github.com/name"
                   margin="dense"
                   variant="outlined"
+                  style={{ width: 250 }}
                   value={this.state.portfolioUrl}
                   onChange={this.handleInputChangeFor('portfolioUrl')}
                 />
@@ -209,6 +218,7 @@ class RegisterPage extends Component {
                   placeholder="i.e. 5 hours per week"
                   margin="dense"
                   variant="outlined"
+                  style={{ width: 250 }}
                   value={this.state.timeAvailable}
                   onChange={this.handleInputChangeFor('timeAvailable')}
                 />
@@ -224,6 +234,7 @@ class RegisterPage extends Component {
                   placeholder="List programming languages here"
                   margin="dense"
                   variant="outlined"
+                  style={{ width: 250 }}
                   value={this.state.languages}
                   onChange={this.handleInputChangeFor('languages')}
                 />
@@ -231,13 +242,14 @@ class RegisterPage extends Component {
             </div>
             <div>
               <label htmlFor="qualifications">
-                <p>What qualifications do you have? Include degrees, certifications, courses, etc.</p>
+                <p>What qualifications do you have? <br /> * Include degrees, certifications, courses, etc.</p>
                 <TextField
                   multiline
                   rows="4"
                   placeholder="List qualifications here"
                   margin="dense"
                   variant="outlined"
+                  style={{ width: 250 }}
                   value={this.state.qualifications}
                   onChange={this.handleInputChangeFor('qualifications')}
                 />
@@ -252,7 +264,8 @@ class RegisterPage extends Component {
               />
             </div>
           </form>
-          <center>
+        </div>
+        <center>
             <Button
               type="button"
               className="link-button"
@@ -263,7 +276,6 @@ class RegisterPage extends Component {
               Login
             </Button>
           </center>
-        </div>
       </ThemeProvider>
     );
   }
