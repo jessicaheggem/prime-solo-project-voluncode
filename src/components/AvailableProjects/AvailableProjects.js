@@ -42,13 +42,13 @@ class AvailableProjects extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div className="content">
-          <h1>Available Projects</h1>
+        <div className="content ">
+          <h1 className="nameCard">Available Projects</h1>
           {/* {JSON.stringify(this.props.reduxStore.projectInfo)} */}
           {/* projects.map : the word projects connects back to the renamed reducer in reducer/index.js in the combineReducers */}
-          <ul>
+          {/* <ul > */}
             {this.props.reduxStore.projects.map(project =>
-              <li key={project.id}>
+              <p key={project.id} className="card">
                 <div>
                   <Link
                     className="availableProjectsHeading"
@@ -57,13 +57,13 @@ class AvailableProjects extends Component {
                     onClick={() => this.handleNameClick(project.id)} ><b>
                       {project.organization_name}
                     </b></Link>
-                  <p>{moment(project.start_date).format('LL')} - {moment(project.end_date).format('LL')}</p>
-                  <p>{project.website} | {project.email}</p>
+                  {/* <p>{moment(project.start_date).format('LL')} - {moment(project.end_date).format('LL')}</p> */}
+                  {/* <p>{project.website} | {project.email}</p> */}
                   <p>{project.description}</p>
                 </div>
-              </li>
+              </p>
             )}
-          </ul>
+          {/* </ul> */}
         </div>
       </ThemeProvider>
     )

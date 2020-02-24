@@ -141,5 +141,14 @@ img{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: left;
     padding: 15px 50px 30px 50px;
-    
   }
+
+   .editProfileCard {
+    margin-left: auto;
+    margin-right: auto;
+    width: 21em;
+    margin-top: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: left;
+    padding: 15px 50px 30px 50px;
+   }

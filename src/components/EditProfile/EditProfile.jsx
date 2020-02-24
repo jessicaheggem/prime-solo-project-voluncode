@@ -57,8 +57,8 @@ class EditProfile extends Component {
     render() {
         return (
             <ThemeProvider theme={theme}>
-                <div className="content">
-                    <h2>Edit Profile</h2>
+                <div className="editProfileCard">
+                    <h1>Edit Profile</h1>
                     First Name:
                     <br />
                     <TextField
@@ -69,6 +69,7 @@ class EditProfile extends Component {
                         value={this.state.first_name}
                         onChange={(event) => this.editProfile(event, 'first_name')}
                     />
+                    <br />
                     <br />
                     Last Name:
                     <br />
@@ -81,6 +82,7 @@ class EditProfile extends Component {
                         onChange={(event) => this.editProfile(event, 'last_name')}
                     />
                     <br />
+                    <br />
                     Email:
                     <br />
                     <TextField
@@ -91,6 +93,7 @@ class EditProfile extends Component {
                         value={this.state.email}
                         onChange={(event) => this.editProfile(event, 'email')}
                     />
+                    <br />
                     <br />
                     City:
                     <br />
@@ -103,6 +106,7 @@ class EditProfile extends Component {
                         onChange={(event) => this.editProfile(event, 'city')}
                     />
                     <br />
+                    <br />
                     State:
                     <br />
                     <TextField
@@ -113,6 +117,7 @@ class EditProfile extends Component {
                         value={this.state.state}
                         onChange={(event) => this.editProfile(event, 'state')}
                     />
+                    <br />
                     <br />
                     Job Title/Occupation:
                     <br />
@@ -125,7 +130,8 @@ class EditProfile extends Component {
                         onChange={(event) => this.editProfile(event, 'occupation')}
                     />
                     <br />
-                    Github URL or another link to your portfolio:
+                    <br />
+                    Portfolio URL:
                     <br />
                     <TextField
                         id="standard-name"
@@ -135,6 +141,7 @@ class EditProfile extends Component {
                         value={this.state.portfolio}
                         onChange={(event) => this.editProfile(event, 'portfolio')}
                     />
+                    <br />
                     <br />
                     How much time can you commit to a project?
                     <br />
@@ -148,6 +155,7 @@ class EditProfile extends Component {
                         onChange={(event) => this.editProfile(event, 'time_available')}
                     />
                     <br />
+                    <br />
                     List your known programming languages:
                     <br />
                     <TextField
@@ -160,7 +168,8 @@ class EditProfile extends Component {
                         onChange={(event) => this.editProfile(event, 'languages')}
                     />
                     <br />
-                    What qualifications do you have? Include degrees, certifications, courses, etc.
+                    <br />
+                    What qualifications do you have? <br/> * Include degrees, certifications, courses, etc.
                     <br />
                     <TextField
                         multiline

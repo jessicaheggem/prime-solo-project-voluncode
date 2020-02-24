@@ -43,10 +43,11 @@ class ProjectInfo extends Component {
       <ThemeProvider theme={theme}>
 
         <div className="content">
-          <h1>Project Info</h1>
-          <h3> {project.organization_name} </h3>
-          <p> {moment(project.start_date).format('LL')} - {moment(project.end_date).format('LL')} </p>
+          {/* <h1 className="nameCard">Project Info</h1> */}
+          <div className="card">
+          <h2> {project.organization_name} </h2>
           <p> {project.website} | {project.email}</p>
+          <p><b>Estimated Project Timeline:</b> {moment(project.start_date).format('LL')} - {moment(project.end_date).format('LL')} </p>
           <p> {project.description} </p>
           <Button
             type="button"
@@ -90,6 +91,7 @@ class ProjectInfo extends Component {
               </div>
             )}
           </Popup>
+          </div>
         </div>
       </ThemeProvider>
     )
