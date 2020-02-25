@@ -37,9 +37,7 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
             console.log(err)
             res.sendStatus(500)
         })
-    // } else {
-    //     res.sendStatus(403)
-    // }
+ 
 });
 
 module.exports = router;

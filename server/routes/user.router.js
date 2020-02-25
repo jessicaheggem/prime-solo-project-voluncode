@@ -33,7 +33,7 @@ router.post('/register', (req, res, next) => {
   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, now()) RETURNING id;`;
   pool.query(queryText, 
     [firstName, lastName, email, username, password, city, state, occupation, portfolioUrl, timeAvailable, languages, qualifications])
-    .then(() => res.sendStatus(201))
+    .then(() => res.sendStatus(200))
     .catch(() => res.sendStatus(500));
 });
 
@@ -46,7 +46,7 @@ router.post('/login', userStrategy.authenticate('local'), (req, res) => {
 });
 
 // clear all server session information about this user
-router.post('/logout', rejectUnauthenticated, (req, res) => {
+router.post('/logout', (req, res) => {
   // Use passport's built-in method to log out the user
   req.logout();
   res.sendStatus(200);
