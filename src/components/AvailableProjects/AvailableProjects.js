@@ -28,10 +28,7 @@ class AvailableProjects extends Component {
 
   handleNameClick = (id) => {
     console.log(id);
-    this.props.dispatch({
-      type: 'FETCH_PROJECT_INFO',
-      payload: id
-    })
+    
     this.props.history.push(`/project_info/${id}`);
   }
 
@@ -45,8 +42,8 @@ class AvailableProjects extends Component {
         <div className="content ">
           <h1 className="nameCard">Available Projects</h1>
           {/* {JSON.stringify(this.props.reduxStore.projectInfo)} */}
-          {/* projects.map : the word projects connects back to the renamed reducer in reducer/index.js in the combineReducers */}
-          {/* <ul > */}
+          {/* projects.map : the word projects connects back to the 
+          renamed reducer in reducer/index.js in the combineReducers */}
             {this.props.reduxStore.projects.map(project =>
               <p key={project.id} className="card">
                 <div>
@@ -63,7 +60,6 @@ class AvailableProjects extends Component {
                 </div>
               </p>
             )}
-          {/* </ul> */}
         </div>
       </ThemeProvider>
     )

@@ -15,6 +15,12 @@ const theme = createMuiTheme({
 })
 
 class ProjectInfo extends Component {
+  componentDidMount(){
+    this.props.dispatch({
+      type: 'FETCH_PROJECT_INFO',
+      payload: this.props.match.params.id
+    })
+  }
 
   state = {
     project_id: '',
