@@ -19,6 +19,7 @@ class ProjectInfo extends Component {
     this.props.dispatch({
       type: 'FETCH_PROJECT_INFO',
       payload: this.props.match.params.id
+      // this.props.match.params.id  keeps project info on page on refresh. "match" matches the id in the url
     })
   }
 
